@@ -1,9 +1,48 @@
 "use client";
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "@/styles/components/bento.scss";
 import Image from 'next/image';
 
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
+
 const TravelersAdventuresCreative = () => {
+  const bentoItemsRef = useRef([]);
+
+  useEffect(() => {
+    // Clear the refs array
+    bentoItemsRef.current = bentoItemsRef.current.filter(Boolean);
+
+    // Set initial state
+    gsap.set(bentoItemsRef.current, {
+      opacity: 0,
+      y: 40,
+      scale: 0.95
+    });
+
+    // Create scroll-triggered animation
+    gsap.to(bentoItemsRef.current, {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 0.7,
+      stagger: 0.1, // Cards appear one after another
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".bento-grid",
+        start: "top 75%",
+        toggleActions: "play none none none",
+      }
+    });
+
+    // Cleanup
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
   return (
     <section className="travelers-section py-5">
       <div className="container">
@@ -25,7 +64,7 @@ const TravelersAdventuresCreative = () => {
               <div className="row g-3 g-md-4">
                 {/* Large tall image - Hiker */}
                 <div className="col-12">
-                  <div className="bento-item bento-tall">
+                  <div className="bento-item bento-tall" ref={el => bentoItemsRef.current[0] = el}>
                     <Image
                       src="/bento/adventure-videos.png" 
                       alt="Hiker on mountain trail"
@@ -37,7 +76,7 @@ const TravelersAdventuresCreative = () => {
                 </div>
                 {/* Medium image - Beach traveler */}
                 <div className="col-12">
-                  <div className="bento-item bento-medium">
+                  <div className="bento-item bento-medium" ref={el => bentoItemsRef.current[1] = el}>
                     <Image
                       src="/bento/three.png" 
                       alt="Traveler at tropical beach"
@@ -55,7 +94,7 @@ const TravelersAdventuresCreative = () => {
               <div className="row g-3 g-md-4">
                 {/* Medium image - Temple */}
                 <div className="col-12">
-                  <div className="bento-item bento-medium">
+                  <div className="bento-item bento-medium" ref={el => bentoItemsRef.current[2] = el}>
                     <Image 
                       src="/bento/two.png" 
                       alt="Ancient temple"
@@ -67,7 +106,7 @@ const TravelersAdventuresCreative = () => {
                 </div>
                 {/* Large tall image - Safari */}
                 <div className="col-12">
-                  <div className="bento-item bento-tall">
+                  <div className="bento-item bento-tall" ref={el => bentoItemsRef.current[3] = el}>
                     <Image 
                       src="/bento/four.png" 
                       alt="Safari adventure"
@@ -85,7 +124,7 @@ const TravelersAdventuresCreative = () => {
               <div className="row g-3 g-md-4">
                 {/* Extra large tall image - Mountain stairs */}
                  <div className="col-12">
-                  <div className="bento-item bento-medium">
+                  <div className="bento-item bento-medium" ref={el => bentoItemsRef.current[4] = el}>
                     <Image 
                       src="/bento/five.png" 
                       alt="City skyline at sunset"
@@ -96,7 +135,7 @@ const TravelersAdventuresCreative = () => {
                   </div>
                 </div>
                 <div className="col-12">
-                  <div className="bento-item bento-tall">
+                  <div className="bento-item bento-tall" ref={el => bentoItemsRef.current[5] = el}>
                     <Image 
                       src="/bento/six.png" 
                       alt="Mountain hiking trail"
@@ -118,7 +157,7 @@ const TravelersAdventuresCreative = () => {
                
                 {/* Large tall image - City street */}
                    <div className="col-12">
-                  <div className="bento-item bento-medium">
+                  <div className="bento-item bento-medium" ref={el => bentoItemsRef.current[6] = el}>
                     <Image 
                       src="/bento/seven.png" 
                       alt="Couple exploring with map"
@@ -129,7 +168,7 @@ const TravelersAdventuresCreative = () => {
                   </div>
                 </div>
                 <div className="col-12">
-                  <div className="bento-item bento-tall">
+                  <div className="bento-item bento-tall" ref={el => bentoItemsRef.current[7] = el}>
                     <Image 
                       src="/bento/eight.png" 
                       alt="City street exploration"

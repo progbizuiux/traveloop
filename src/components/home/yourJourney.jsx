@@ -112,7 +112,7 @@ const YourJourney = () => {
                         </div>
                     </div>  
 
-                      <div className="d-flex justify-content-center w-100 mt-5">
+                      <div className="d-flex justify-content-center w-100 ">
           <Button text="Start Planning" />
         </div>
 

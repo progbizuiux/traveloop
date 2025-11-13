@@ -18,7 +18,10 @@ const EntireTrip = () => {
                         <p>
                             From finding the best flight deals and handling complex visa applications to uncovering unique tour packages, we’ve streamlined every step of your journey into one seamless experience.
                         </p>
-                        <Button text="Browse All Tours"/>
+
+                        <div className="mt-5">
+                            <Button text="Browse All Tours"/>
+                        </div>
                     </div>
 
                     <div className="col-12 col-md-6 col-lg-6 order-2 order-md-2 mt-sm-0 mt-5">

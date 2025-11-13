@@ -46,7 +46,7 @@ const Button = ({ text = "Button", onClick }) => {
   return (
     <button 
       ref={buttonRef}
-      className="custom-button"
+      className="custom-button mt-5"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
