@@ -3,14 +3,14 @@
 .blog-page {
   .page-banner {
     .page-banner-content {
-      padding: 150px 0;
+      // padding: 150px 0;
 
       @include breakpoint-above(md) {
-        padding: 150px 300px;
+        padding: 0px 300px;
       }
 
       @include breakpoint-above(xxxl) {
-        padding: 150px 450px;
+        padding: 0px 250px;
       }
 
       
