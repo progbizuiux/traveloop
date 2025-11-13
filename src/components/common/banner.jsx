@@ -34,7 +34,9 @@ const BannerSimple = ({title="Banner Title",description="Banner Description"}) =
     }, []);
 
     return (
-        <section className="page-banner" ref={bannerRef}>
+        <section className="container" ref={bannerRef}>
+            <div className='page-banner'>
+
 
             <div className='page-banner-content'>
 
@@ -42,6 +44,7 @@ const BannerSimple = ({title="Banner Title",description="Banner Description"}) =
 
                 <p ref={descriptionRef}>{description}</p>
 
+            </div>
             </div>
 
         </section>

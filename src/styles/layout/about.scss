@@ -1,6 +1,21 @@
 
 @use "../helpers/mixins" as *;
 .about-page {
+    .page-banner {
+          .page-banner-content {
+    padding:0;
+    // padding: 150px 200px;
+    @include breakpoint-above(md) {
+        padding: 150px 200px;
+    }
+  
+    @include breakpoint-above(xxxl) {
+      padding: 150px 400px
+    }
+    
+  }
+        
+    }
     
     .image-section {
         background-color: #fff;

@@ -2,16 +2,19 @@
 @use "../helpers/variables" as *;
 
 .gallery {
-    .page-banner {
-
+  .page-banner {
+    
     .page-banner-content {
-      p {
-        padding: 0 600px;
-
-        @include breakpoint-less(sm) {
-            padding: 0;
-        }
+      padding: 100px 0;
+      // padding: 150px 200px;
+      @include breakpoint-above(md) {
+          padding: 150px 300px;
       }
+    
+      @include breakpoint-above(xxxl) {
+        padding: 150px 450px
+      }
+      
     }
   }
 .video-gallery {

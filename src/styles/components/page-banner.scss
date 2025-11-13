@@ -1,28 +1,37 @@
-
 @use "../helpers/mixins" as *;
 @use "../helpers/variables" as *;
-.page-banner {
-  min-height: 600px;
-  
- display: flex;
-    justify-content: center;  // centers vertically
-    align-items: center;      // centers horizontally
-    height: 100%;             // ensures the flex container fills the banner
-    text-align: center;       // optional, centers text content inside
-  .page-banner-content {
-   
 
-    h1 {
-        padding: 0 300px;
-        @include breakpoint-less(md){
-            padding: 0;
-        }
+.page-banner {
+  position: relative;
+  height: 70vh;
+  
+  @include breakpoint-less(md) {
+    height: 60vh; // Fixed height for mobile
+    
+  }
+  
+  .page-banner-content {
+    h1{
+     @include breakpoint-less(md) {
+      line-height: 60px;
+     }
     }
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    padding: 0 20px; // Mobile padding
+    
+ 
+    
+    h1 {
+      margin: 0 0 16px 0; // Bottom margin for spacing from paragraph
+    }
+    
     p {
-        padding: 0 300px;
-        @include breakpoint-less(md){
-            padding: 0;
-        }
-    }   
+      margin: 0; // Remove default margin
+    }
   }
 }

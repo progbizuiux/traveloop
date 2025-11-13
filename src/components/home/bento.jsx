@@ -4,6 +4,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import "@/styles/components/bento.scss";
 
+import Image from 'next/image';
+
 // Register ScrollTrigger plugin
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -118,20 +120,24 @@ const TravelersAdventuresCreative = () => {
                 {/* Large tall image - Hiker */}
                 <div className="col-12">
                   <div className="bento-item bento-tall">
-                    <img 
+                    <Image
                       src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=800&q=80" 
                       alt="Hiker on mountain trail"
                       className="bento-img"
+                      width={500}
+                      height={500}
                     />
                   </div>
                 </div>
                 {/* Medium image - Beach traveler */}
                 <div className="col-12">
                   <div className="bento-item bento-medium">
-                    <img 
+                    <Image
                       src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80" 
                       alt="Traveler at tropical beach"
                       className="bento-img"
+                      width={500}
+                      height={500}
                     />
                   </div>
                 </div>
@@ -144,20 +150,24 @@ const TravelersAdventuresCreative = () => {
                 {/* Medium image - Temple */}
                 <div className="col-12">
                   <div className="bento-item bento-medium">
-                    <img 
+                    <Image 
                       src="https://images.unsplash.com/photo-1563967243-1bbb8e7e6e00?w=800&q=80" 
                       alt="Ancient temple"
                       className="bento-img"
+                      width={500}
+                      height={500}
                     />
                   </div>
                 </div>
                 {/* Large tall image - Safari */}
                 <div className="col-12">
                   <div className="bento-item bento-tall">
-                    <img 
+                    <Image 
                       src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80" 
                       alt="Safari adventure"
                       className="bento-img"
+                      width={500}
+                      height={500}
                     />
                   </div>
                 </div>
@@ -170,19 +180,23 @@ const TravelersAdventuresCreative = () => {
                 {/* Extra large tall image - Mountain stairs */}
                  <div className="col-12">
                   <div className="bento-item bento-medium">
-                    <img 
+                    <Image 
                       src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800&q=80" 
                       alt="City skyline at sunset"
                       className="bento-img"
+                      width={500}
+                      height={500}
                     />
                   </div>
                 </div>
                 <div className="col-12">
                   <div className="bento-item bento-tall">
-                    <img 
+                    <Image 
                       src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80" 
                       alt="Mountain hiking trail"
                       className="bento-img"
+                      width={500}
+                      height={500}
                     />
                   </div>
                 </div>
@@ -199,19 +213,23 @@ const TravelersAdventuresCreative = () => {
                 {/* Large tall image - City street */}
                 <div className="col-12">
                   <div className="bento-item bento-tall">
-                    <img 
+                    <Image 
                       src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&q=80" 
                       alt="City street exploration"
                       className="bento-img"
+                      width={500}
+                      height={500}
                     />
                   </div>
                 </div>
                  <div className="col-12">
                   <div className="bento-item bento-medium">
-                    <img 
+                    <Image 
                       src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&q=80" 
                       alt="Couple exploring with map"
                       className="bento-img"
+                      width={500}
+                      height={500}
                     />
                   </div>
                 </div>

@@ -385,7 +385,11 @@
   &:hover:not(:disabled) {
     background: #333;
     color: white;
-    // transform: scale(1.05);
+    
+    // Change SVG stroke color to white on hover
+    svg path {
+      stroke: white;
+    }
   }
 
   &:disabled {

@@ -1,4 +1,22 @@
+
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
 .package_page {
+  .page-banner {
+    
+    .page-banner-content {
+      padding: 100px 0;
+      // padding: 150px 200px;
+      @include breakpoint-above(md) {
+          padding: 150px 300px;
+      }
+    
+      @include breakpoint-above(xxxl) {
+        padding: 150px 450px
+      }
+      
+    }
+  }
   .package_wrapper {
     display: flex;
     flex-wrap: wrap;

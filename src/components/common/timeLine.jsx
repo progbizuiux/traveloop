@@ -4,6 +4,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import "@/styles/components/timeline.scss";
 
+import Image from 'next/image';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const TimelineComponent = () => {
@@ -137,7 +139,7 @@ const TimelineComponent = () => {
   ];
 
   return (
-    <div className='timeline-component section-gap-top-bottom'>
+    <div className='timeline-component section-gap-top-bottom pt-0'>
       <div className="container">
         <div className='header d-flex flex-column align-items-center justify-content-center'>
           <h2 className='text-center'>Why travelloop</h2>
@@ -169,7 +171,9 @@ const TimelineComponent = () => {
                   }`}
                 >
                   <div className="image-wrapper">
-                    <img 
+                    <Image
+                      width={500}
+                      height={500}
                       src={item.image} 
                       alt={item.alt}
                       loading={index === 0 ? 'eager' : 'lazy'}

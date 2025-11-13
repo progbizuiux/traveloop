@@ -3,29 +3,18 @@
 .blog-page {
   .page-banner {
     .page-banner-content {
+      padding: 150px 0;
 
-        p{
-            padding: 0 420px;
-
-              @include breakpoint-less(sm) {
-          padding: 0;
-        }
-        @include breakpoint-less(lg) {
-          padding: 0;
-          
-        }
-            
-        }
-      h1 {
-        padding: 0 350px;
-        @include breakpoint-less(sm) {
-          padding: 0;
-        }
-        @include breakpoint-less(lg) {
-          padding: 0;
-          
-        }
+      @include breakpoint-above(md) {
+        padding: 150px 300px;
       }
+
+      @include breakpoint-above(xxxl) {
+        padding: 150px 450px;
+      }
+
+      
+  
     }
   }
 

@@ -9,8 +9,9 @@
   width: 100%;
   z-index: 1000;
   background: transparent;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 0.25s ease, box-shadow 0.25s ease;
   padding: 0;
+  will-change: background, box-shadow;
 
   &__inner {
     display: flex;
@@ -20,7 +21,7 @@
     max-width: 100%;
     width: 100%;
     margin: 0 auto;
-    transition: padding 0.3s ease;
+    transition: padding 0.25s ease;
 
     @media (min-width: 768px) {
       padding: 20px 40px;
@@ -42,7 +43,7 @@
       height: 70px;
       width: auto;
       max-width: 100%;
-      transition: all 0.3s ease;
+      transition: height 0.25s ease;
       display: block;
     }
 
@@ -85,7 +86,7 @@
           line-height: normal;
           letter-spacing: -1.71px;
           text-decoration: none;
-          transition: all 0.3s ease;
+          transition: color 0.2s ease, transform 0.2s ease;
           position: relative;
           padding: 8px 0;
           display: block;
@@ -103,7 +104,7 @@
             width: 0;
             height: 2px;
             background: #ffffff;
-            transition: width 0.3s ease;
+            transition: width 0.25s ease;
           }
 
           &:hover {
@@ -135,7 +136,7 @@
   &--scrolled {
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 
     .nav-bar__inner {
       padding: 15px 15px;
@@ -159,7 +160,6 @@
 
     .menu ul li a {
       color: #1a1a1a;
-      text-shadow: none;
 
       &::after {
         background: #1a1a1a;
@@ -214,15 +214,15 @@
     cursor: pointer;
     z-index: 1002;
     position: relative;
-    transition: all 0.3s ease;
     flex-shrink: 0;
+    -webkit-tap-highlight-color: transparent;
 
     span {
       width: 26px;
       height: 2px;
       background: #ffffff;
       border-radius: 2px;
-      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition: all 0.3s ease;
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
@@ -277,7 +277,7 @@
     z-index: 1001;
     visibility: hidden;
     pointer-events: none;
-    transition: visibility 0s linear 0.4s;
+    transition: visibility 0s linear 0.3s;
 
     &--open {
       visibility: visible;
@@ -301,8 +301,9 @@
       height: 100%;
       background: rgba(0, 0, 0, 0.5);
       opacity: 0;
-      transition: opacity 0.4s ease;
+      transition: opacity 0.3s ease;
       cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
     }
 
     &__content {
@@ -315,7 +316,7 @@
       background: #ffffff;
       box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
       transform: translateX(100%);
-      transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition: transform 0.3s ease;
       overflow-y: auto;
       overflow-x: hidden;
       -webkit-overflow-scrolling: touch;
@@ -334,12 +335,12 @@
 
           li {
             opacity: 0;
-            transform: translateX(30px);
+            transform: translateX(20px);
+            animation: slideIn 0.4s ease forwards;
 
             @for $i from 1 through 10 {
               &:nth-child(#{$i}) {
-                animation: slideIn 0.5s ease forwards;
-                animation-delay: #{$i * 0.08 + 0.2}s;
+                animation-delay: #{$i * 0.05 + 0.1}s;
               }
             }
 
@@ -349,7 +350,7 @@
               color: #1a1a1a;
               text-decoration: none;
               border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-              transition: all 0.3s ease;
+              transition: color 0.2s ease, padding-left 0.2s ease;
               position: relative;
               font-family: $font-family-montserrat;
               font-size: 19px;
@@ -357,6 +358,7 @@
               font-weight: 400;
               line-height: normal;
               letter-spacing: -1.71px;
+              -webkit-tap-highlight-color: transparent;
 
               &::before {
                 content: "";
@@ -367,7 +369,7 @@
                 width: 0;
                 height: 2px;
                 background: var(--color-primary, #158e37);
-                transition: width 0.3s ease;
+                transition: width 0.2s ease;
               }
 
               &:hover,
@@ -387,7 +389,7 @@
         .mobile-menu__cta {
           opacity: 0;
           transform: translateY(20px);
-          animation: fadeInUp 0.6s ease 0.6s forwards;
+          animation: fadeInUp 0.5s ease 0.5s forwards;
           margin-top: auto;
 
           button {
@@ -410,16 +412,6 @@
       }
     }
   }
-}
-
-// Prevent body scroll when mobile menu is open
-body.mobile-menu-open {
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
 }
 
 // Animations
