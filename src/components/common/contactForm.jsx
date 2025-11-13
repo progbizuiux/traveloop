@@ -36,7 +36,7 @@ const ContactForm = () => {
 
   return (
     <div className="contact-form">
-      <h3>Get Your Free Consultation</h3>
+      <h4>Get Your Free Consultation</h4>
       <form className='' onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="fullName">

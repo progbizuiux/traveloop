@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Logo and Tagline Column */}
           <div className="footer-column footer-brand">
             <div className="footer-logo">
-                <Image src="/logo/Traveloop-Logo-white.png" alt="Progbiz" width={100} height={100} />
+                <Image src="/updated-logo/white-logo.png" alt="Progbiz" width={100} height={100} />
             
             </div>
             <p className="footer-description">

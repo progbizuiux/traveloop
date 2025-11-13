@@ -21,7 +21,7 @@ const EntireTrip = () => {
                         <Button text="Browse All Tours"/>
                     </div>
 
-                    <div className="col-12 col-md-6 col-lg-6 order-2 order-md-2 sm-mt-5">
+                    <div className="col-12 col-md-6 col-lg-6 order-2 order-md-2 mt-sm-0 mt-5">
                         <Image src="/home/entire-trip/image.png" className="w-100 img-fluid" alt="entireTrip" width={500} height={500} />
 
                     </div>

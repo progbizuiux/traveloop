@@ -125,12 +125,15 @@ export const Navbar = () => {
           </nav>
 
           {/* CTA Button */}
-          <div className="cta">
-            <Button 
-              text="Contact" 
-              onClick={() => handleCTAClick('navbar_cta')}
-            />
-          </div>
+          <Link href="/contact">
+             <div className="cta">
+              <Button 
+                text="Contact" 
+                onClick={() => handleCTAClick('navbar_cta')}
+              />
+            </div>
+          </Link>
+         
 
           {/* Mobile Menu Toggle */}
           <button 
@@ -172,12 +175,15 @@ export const Navbar = () => {
                 </li>
               ))}
             </ul>
+
+            <Link href="/contact">
             <div className="mobile-menu__cta">
               <Button 
                 text="Contact" 
                 onClick={() => handleCTAClick('mobile_navbar_cta')}
               />
             </div>
+            </Link>
           </nav>
         </div>
       </div>

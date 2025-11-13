@@ -2,20 +2,22 @@
 @use "../helpers/mixins" as *;
 
 .contact-page {
+  .page-banner {
+    .page-banner-content {
+      p {
+        padding: 0 280px;
+        @include breakpoint-less(sm) {
+          padding: 0px;
+        }
+      }
+      
+    }
+    
+  }
   .contact-section {
     .contact-info {
 
-      h6 {
-        margin:0;
-        color: var(--Text-Primary, #2E4042);
-font-size: 24px;
-font-style: normal;
-font-weight: 500;
-line-height: 36px; /* 150% */
-letter-spacing: -1.68px;
-text-transform: capitalize;
 
-      }
 
  
     
@@ -25,22 +27,15 @@ text-transform: capitalize;
   flex-direction: column;
   gap: 20px;
   margin-top: 2rem;
-  
-  p {
+  h4 {
     color: var(--Text-Primary, #2E4042);
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 36px; /* 100% */
-    letter-spacing: -0.72px;
-    text-transform: capitalize;
-    margin: 0; // Remove default margin
+    font-family: $font-family-montserrat;
+   
   }
 
   .contact-item {
     display: flex;
     flex-direction: row; // Change to row
-    margin-bottom: 1.5rem;
 
     &:last-child {
       margin-bottom: 0;
@@ -66,7 +61,7 @@ text-transform: capitalize;
         margin: 0 0 0.5rem 0; // Add bottom margin for spacing
       }
 
-      p {
+      h3 {
         margin: 0; // Remove default margin
       }
     }

@@ -27,7 +27,7 @@ const Journeys = () => {
 
         <div className="journeys-cards-wrapper section-body-gap">
           <PackageCard 
-            image="/package/package-0.png"
+            image="/package/pkg.png"
             price="1499"
             title="European Capitals Premium"
             description="A curated journey through the art of Paris, the ancient history of Rome, and the charming canals of Amsterdam."

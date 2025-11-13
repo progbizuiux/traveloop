@@ -17,7 +17,7 @@ const Contact = () => {
                     <div className="row">
                         <div className="col-lg-6 col-md-6 col-sm-12">
                             <div className="contact-info">
-                                <h2>Reach Us Directly</h2>
+                                <h3>Reach Us Directly</h3>
                                 <p>
                                     Feel free to get in touch with us using the details<br />
                                     below. Our team is based in Dubai and ready to help<br />
@@ -37,7 +37,7 @@ const Contact = () => {
                 <h6>Phone</h6>
             </div>
         </div>
-        <p><a href="tel:14158557708">14158557708</a></p>
+        <h4><a href="tel:14158557708">14158557708</a></h4>
     </div>
 
     {/* Email */}
@@ -52,14 +52,14 @@ const Contact = () => {
                 <h6>Email</h6>
             </div>
         </div>
-        <p><a href="mailto:Info@Example.Com">Info@Example.Com</a></p>
+        <h4><a href="mailto:Info@Example.Com">Info@Example.Com</a></h4>
     </div>
 </div>
 
 
                             </div>
                         </div>
-                        <div className="col-lg-6 col-md-6 col-sm-12">
+                        <div className="col-lg-6 col-md-6 col-sm-12 mt-sm-0 mt-5">
                             {/* <div className="contact-form">
                                 <h3>Get Your Free Consultation</h3>
                             </div> */}
