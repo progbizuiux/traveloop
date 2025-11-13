@@ -8,7 +8,7 @@
       padding: 100px 0;
       // padding: 150px 200px;
       @include breakpoint-above(md) {
-          padding: 150px 150px;
+          padding: 150px 180px;
       }
     
       @include breakpoint-above(xxxl) {
