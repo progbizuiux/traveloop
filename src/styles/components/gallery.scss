@@ -8,11 +8,11 @@
       padding: 100px 0;
       // padding: 150px 200px;
       @include breakpoint-above(md) {
-          padding: 150px 300px;
+          padding: 150px 150px;
       }
     
       @include breakpoint-above(xxxl) {
-        padding: 150px 450px
+        padding: 150px 150px
       }
       
     }
