@@ -115,16 +115,16 @@ export const TestimonialsCarousel = () => {
   <path
     d="M8 14.9998H22"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
   />
   <path
     d="M13.5 21.25C13.5 21.25 7.25003 16.647 7.25 15C7.24999 13.353 13.5 8.75 13.5 8.75"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+   strokeLinecap="round"
+    strokeLinejoin="round"
   />
 </svg>
 
@@ -139,16 +139,16 @@ export const TestimonialsCarousel = () => {
   <path
     d="M22 15.0002L8 15.0002"
     stroke="currentColor"
-    stroke-width="1.5"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="1.5"
+   strokeLinecap="round"
+    strokeLinejoin="round"
   />
   <path
     d="M16.5 8.75C16.5 8.75 22.75 13.353 22.75 15C22.75 16.647 16.5 21.25 16.5 21.25"
     stroke="currentColor"
-    stroke-width="1.5"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="1.5"
+   strokeLinecap="round"
+    strokeLinejoin="round"
   />
 </svg>
 

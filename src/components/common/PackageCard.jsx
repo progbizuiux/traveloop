@@ -137,6 +137,6 @@ const PackageCard = () => {
 };
 
 export default PackageCard; <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
-  <path d="M18.2969 10.9849L8.33179 16.2061" stroke="#D97706" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M16.5575 17.5414C16.5575 17.5414 19.2774 11.9591 18.6659 10.792C18.0544 9.62483 11.9165 8.68359 11.9165 8.68359" stroke="#D97706" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M18.2969 10.9849L8.33179 16.2061" stroke="#D97706" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+  <path d="M16.5575 17.5414C16.5575 17.5414 19.2774 11.9591 18.6659 10.792C18.0544 9.62483 11.9165 8.68359 11.9165 8.68359" stroke="#D97706" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
 </svg>
