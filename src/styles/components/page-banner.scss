@@ -3,7 +3,7 @@
 
 .page-banner {
   position: relative;
-  height: 50vh;
+  height: 60vh;
   
   @include breakpoint-less(md) {
     height: 50vh; // Fixed height for mobile

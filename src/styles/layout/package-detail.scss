@@ -1,9 +1,9 @@
 @use "../helpers/variables" as *;
 @use "../helpers/mixins" as *;
 .package_details_page {
+  margin-top: 150px;
   .header_section {
  
-    padding: 150px 0;
     .header-icons {
       display: flex;
       gap: 50px;

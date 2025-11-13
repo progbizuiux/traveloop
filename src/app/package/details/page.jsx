@@ -23,7 +23,7 @@ const Page = () => {
 
 
                                 <h2>
-                                    wonders Of Georgia
+                                    Wonders Of Georgia
                                 </h2>
 
                                 <p>
@@ -279,7 +279,7 @@ const Page = () => {
             </section>
 
 
-            <section className="explore_other_packages section-gap-top-bottom pt-0">
+            <section className="explore_other_packages section-gap-top-bottom ">
 
                 <div className="container">
 
@@ -288,9 +288,24 @@ const Page = () => {
                     </h2>
 
                     <div className="package_wrapper ">
-                        <PackageCard />
-                        <PackageCard />
-                        <PackageCard />
+                      <PackageCard 
+                             image="/package/package-4.png"
+                             price="899"
+                             title="Highlights of Japan"
+                             description="Feel the energy of Shinjuku in Tokyo, discover the serene temples of Kyoto, and see the iconic Mt. Fuji."
+                           />
+                           <PackageCard 
+                             image="/package/magical.png"
+                             price="649"
+                             title="Magical Bali Adventure"
+                             description="Find peace in the rice terraces of Ubud, relax on the beaches of Seminyak, and visit the cliffside Uluwatu Temple."
+                           />
+                           <PackageCard 
+                             image="/package/savings-2.png"
+                             price="899"
+                             title="The Great Kenya Safari"
+                             description="Witness the Big 5 in the legendary Maasai Mara, see the flamingos of Lake Nakuru, and start your journey in Nairobi."
+                           />   
 
                     </div>
                 </div>

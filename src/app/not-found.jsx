@@ -54,19 +54,15 @@ export default function NotFound() {
                 </h1>
 
                 <div className='error-status'>
-                    <Image className='bg' src={'/icons/404.png'} width={400} height={400} alt='404 status' />
-                    <Image className='overlay' src={'/icons/404-face.png'} width={400} height={400} alt='404 status' />
+                    <Image className='bg' src={'/404/404.png'} width={400} height={400} alt='404 status' />
+                    {/* <Image className='overlay' src={'/icons/404-face.png'} width={400} height={400} alt='404 status' /> */}
                 </div>
                 <p>The page you're looking for isn’t available right now. Let’s <br /> get you back on track.</p>
 
                 <Link href={'/'}>
                   <Button
-                    type="button"
-                    variant="light"
-                    className="btn btn-theme "
-                    showDot={false}
+                   text='Back to Home'
                   >
-                    BACK TO HOME
                   </Button>
                 </Link>
               </div>

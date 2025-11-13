@@ -24,13 +24,10 @@
     transition: padding 0.25s ease;
 
     @media (min-width: 768px) {
-      padding: 20px 40px;
+      padding: 20px 0px;
     }
 
-    @media (min-width: 1200px) {
-      max-width: 1200px;
-      padding: 20px 0;
-    }
+  
   }
 
   // Logo
@@ -86,7 +83,7 @@
           line-height: normal;
           letter-spacing: -1.71px;
           text-decoration: none;
-          transition: color 0.2s ease, transform 0.2s ease;
+          transition: color 0.2s ease;
           position: relative;
           padding: 8px 0;
           display: block;
@@ -108,8 +105,6 @@
           }
 
           &:hover {
-            transform: translateY(-2px);
-
             &::after {
               width: 100%;
             }
@@ -139,14 +134,14 @@
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 
     .nav-bar__inner {
-      padding: 15px 15px;
+      padding: 10px 15px;
 
       @media (min-width: 768px) {
         padding: 15px 40px;
       }
 
       @media (min-width: 1200px) {
-        padding: 15px 0;
+        padding: 10px 0;
       }
     }
 

@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Montserrat,Figtree } from "next/font/google"; // ✅ import Montserrat here
+import { Geist, Geist_Mono, Montserrat,Figtree,Raleway } from "next/font/google"; // ✅ import Montserrat here
 import "./globals.css";
 import "@/styles/theme.scss";
 import { Locomotive } from "@/lib/locomotive";
@@ -6,6 +6,7 @@ import TransitionLayout from "@/components/ui/TransitionLayout/TransitionLayout"
 import LenisSmoothScroll from "@/lib/LenisScrool";
 import { Navbar } from "@/components/Navbar/Navbar";
 import NoSSRBootstrap from "@/lib/bootstrap";
+
 import localFont from "next/font/local";
 
 
@@ -45,11 +46,19 @@ const figtree = Figtree({
   display: "swap",
 });
 
+const raleway = Raleway({
+  subsets: ["latin"],
+  // Pick what you need:
+  weight: ["300", "400", "500", "600", "700"], // or use 'variable' below
+  variable: "--font-raleway", // use this for Tailwind/CSS variable setup
+  display: "swap",
+});
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} ${figtree.variable}`}
+        className={`${montserrat.variable} ${figtree.variable} ${raleway.variable}`}
         cz-shortcut-listen="true"
         suppressHydrationWarning={true}
         // style={{

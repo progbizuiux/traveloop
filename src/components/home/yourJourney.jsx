@@ -3,7 +3,7 @@ import Button from "../ui/Button/Button";
 
 const YourJourney = () => {
     return (
-        <section className="your-journey section-gap-top-bottom">
+        <section className="your-journey section-gap-top-bottom ">
 
 
             <div className="container">
@@ -110,7 +110,12 @@ const YourJourney = () => {
                             <h5>UAE Visa Change</h5>
                             <p>seamless changes without leaving the UAE</p>
                         </div>
-                    </div>
+                    </div>  
+
+                      <div className="d-flex justify-content-center w-100 mt-5">
+          <Button text="Start Planning" />
+        </div>
+
 
 
                 </div>

@@ -15,8 +15,8 @@ const Page = () => {
 
     const scrollToSection = (ref) => {
         if (ref.current) {
-            ref.current.scrollIntoView({ 
-                behavior: 'smooth', 
+            ref.current.scrollIntoView({
+                behavior: 'smooth',
                 block: 'start',
                 inline: 'nearest'
             });
@@ -198,8 +198,8 @@ const Page = () => {
 
 
                     <div className="blog-card-wrapper">
-                        <BlogCard />
-                        <BlogCard />
+                        <BlogCard image={"/blog/blog-1.png"} description={"From the neon lights of Shinjuku to the serene temples of Kyoto, here's the perfect 10-day itinerary for your first trip to Japan."} title={"First-Timer's Guide to Japan: Tokyo, Kyoto & Osaka"} />
+                        <BlogCard image={"/blog/blog-2.png"} description={" Beyond Khachapuri. We explore the 10 must-try dishes and the best local restaurants in Georgia's vibrant capital."} title={"A Food-Lover's Guide to Tbilisi, Georgia"} />
 
 
                     </div>

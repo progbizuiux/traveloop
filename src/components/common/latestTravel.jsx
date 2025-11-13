@@ -21,7 +21,7 @@ const LatestTravel = () => {
                             <Image src="/home/image-1.png" alt="" width={500} height={500} />
                         </div>
                         <div className="card-content">
-                            <h3>5 Reasons the <br/>Maldives Should Be<br/> Your Next Escape</h3>
+                            <h3>5 Reasons the Maldives Should Be Your Next Escape</h3>
                             <p>Discover why this tropical paradise is perfect for honeymoons, family trips, or solo adventures.</p>
                             <p className="read-more">
                                 Read More
@@ -30,10 +30,10 @@ const LatestTravel = () => {
                     </div>
                     <div className="main-card">
                         <div className="image-card">
-                            <Image src="/home/image-1.png" alt="" width={500} height={500} />
+                            <Image src="/savings.png" alt="" width={500} height={500} />
                         </div>
                         <div className="card-content">
-                            <h3>5 Reasons the <br/>Maldives Should Be<br/> Your Next Escape</h3>
+                            <h3>Maximizing Savings: Tips for Booking Group Fares</h3>
                             <p>Discover why this tropical paradise is perfect for honeymoons, family trips, or solo adventures.</p>
                             <p className="read-more">
                                 Read More

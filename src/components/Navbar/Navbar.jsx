@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
 import Image from "next/image"
 import "@/styles/components/navbar.scss"
@@ -22,40 +22,25 @@ export const Navbar = () => {
   // Check if we're on homepage
   const isHomePage = pathname === "/"
 
-  // Optimized scroll handler with requestAnimationFrame
   useEffect(() => {
-    let ticking = false
-    
     const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 50)
-          ticking = false
-        })
-        ticking = true
-      }
+      setIsScrolled(window.scrollY > 50)
     }
 
-    window.addEventListener("scroll", handleScroll, { passive: true })
+    window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden'
-      document.body.style.position = 'fixed'
-      document.body.style.width = '100%'
+      document.body.classList.add('mobile-menu-open')
     } else {
-      document.body.style.overflow = ''
-      document.body.style.position = ''
-      document.body.style.width = ''
+      document.body.classList.remove('mobile-menu-open')
     }
     
     return () => {
-      document.body.style.overflow = ''
-      document.body.style.position = ''
-      document.body.style.width = ''
+      document.body.classList.remove('mobile-menu-open')
     }
   }, [isMobileMenuOpen])
 
@@ -71,15 +56,15 @@ export const Navbar = () => {
     return () => document.removeEventListener("keydown", handleEscape)
   }, [isMobileMenuOpen])
 
-  const toggleMobileMenu = useCallback(() => {
-    setIsMobileMenuOpen(prev => !prev)
-  }, [])
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
 
-  const closeMobileMenu = useCallback(() => {
+  const closeMobileMenu = () => {
     setIsMobileMenuOpen(false)
-  }, [])
+  }
 
-  const handleCTAClick = useCallback((source) => {
+  const handleCTAClick = (source) => {
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'click_cta', {
         'event_category': 'engagement',
@@ -96,15 +81,15 @@ export const Navbar = () => {
         contactSection.scrollIntoView({ behavior: 'smooth' })
       }
     }, isMobileMenuOpen ? 300 : 0)
-  }, [isMobileMenuOpen, closeMobileMenu])
+  }
 
   // Check if link is active
-  const isActiveLink = useCallback((href) => {
+  const isActiveLink = (href) => {
     if (href === '/') {
       return pathname === '/'
     }
     return pathname.startsWith(href)
-  }, [pathname])
+  }
 
   return (
     <header className={`nav-bar ${isScrolled ? "nav-bar--scrolled" : ""} ${!isHomePage ? "nav-bar--dark-links" : ""}`}>

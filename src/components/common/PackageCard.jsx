@@ -3,8 +3,9 @@ import { useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import "@/styles/components/package-card.scss";
+import Link from "next/link";
 
-const PackageCard = () => {
+const PackageCard = ({image, price, title, description  }) => {
   const cardActionRef = useRef(null);
   const textRef = useRef(null);
   const buttonRef = useRef(null);
@@ -17,28 +18,28 @@ const PackageCard = () => {
       x: 3,
       fontWeight: 600,
 
-      duration: 0.2,
+      duration: 0.1,
       ease: "power2.out"
     });
 
     // Animate button - fill background
     tl.to(buttonRef.current, {
       backgroundColor: "#D97706",
-      duration: 0.2,
+      duration: 0.1,
       ease: "power2.out"
     }, "-=0.2");
 
     // Animate SVG arrow - change color, move, and rotate to point right
     tl.to(svgRef.current.querySelectorAll('path'), {
       stroke: "#FFFFFF",
-      duration: 0.2,
+      duration: 0.1,
       ease: "power2.out"
     }, "-=0.2");
 
     tl.to(svgRef.current, {
       x: 0,
       rotation: 40,
-      duration: 0.2,
+      duration: 0.1,
       ease: "power2.out"
     }, "-=0.2");
   };
@@ -49,28 +50,28 @@ const PackageCard = () => {
     tl.to(textRef.current, {
       x: 0,
       fontWeight: 400,
-      duration: 0.2,
+      duration: 0.1,
       ease: "power2.in"
     });
 
     // Reset button
     tl.to(buttonRef.current, {
       backgroundColor: "transparent",
-      duration: 0.2,
+      duration: 0.1,
       ease: "power2.in"
     }, "-=0.2");
 
     // Reset SVG arrow
     tl.to(svgRef.current.querySelectorAll('path'), {
       stroke: "#D97706",
-      duration: 0.2,
+      duration: 0.1,
       ease: "power2.in"
     }, "-=0.2");
 
     tl.to(svgRef.current, {
       x: 0,
       rotation: 0,
-      duration: 0.2,
+      duration: 0.1,
       ease: "power2.in"
     }, "-=0.2");
   };
@@ -79,20 +80,20 @@ const PackageCard = () => {
     <div className="card package-card">
       <div className="card-img-wrapper">
         <Image
-          src="/home/package/package.png"
+          src={image}
           className="card-img-top"
           alt="European Capitals"
-          width={100}
-          height={100}
+          width={500}
+          height={500}
+          quality={90}
         />
-        <span className="badge">Popular</span>
+        <span className="badge">899 AED / Person </span>
       </div>
 
       <div className="card-body">
-        <h3 className="card-title">European Capitals Premium</h3>
+        <h3 className="card-title">{title}</h3>
         <p className="card-text">
-          A curated journey through the art of Paris, the ancient history of
-          Rome, and the charming canals of Amsterdam.
+          {description}
         </p>
 
         <div
@@ -102,6 +103,8 @@ const PackageCard = () => {
           onMouseLeave={handleMouseLeave}
         >
           <p ref={textRef}>View Europe Tours</p>
+
+          <Link href="/package/details">
           <button className="action-btn" ref={buttonRef}>
             <svg
               ref={svgRef}
@@ -130,6 +133,7 @@ const PackageCard = () => {
             </svg>
 
           </button>
+          </Link>
         </div>
       </div>
     </div>

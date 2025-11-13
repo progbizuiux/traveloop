@@ -43,7 +43,9 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: left;
   transition: $transition;
   gap: 1.5rem;
-
+ h6 {
+  margin : 0
+ }
   @media (max-width: 768px) {
     padding: 1.25rem 1.5rem;
     gap: 1rem;
@@ -70,6 +72,10 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 // Accordion Question
 .accordion-question {
   flex: 1;
+
+  h {
+    margin: 0;
+  }
 
   // @media (max-width: 768px) {
   //   font-size: 0.9375rem;

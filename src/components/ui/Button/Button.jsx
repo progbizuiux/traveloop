@@ -13,14 +13,14 @@ const Button = ({ text = "Button", onClick }) => {
       opacity: 1,
       width: 19,
       marginLeft: 10,
-      duration: 0.4,
+      duration: 0.2,
       ease: "power2.out"
     })
     
     // Scale button slightly
     gsap.to(buttonRef.current, {
       scale: 1.02,
-      duration: 0.3,
+      duration: 0.2,
       ease: "power2.out"
     })
   }
@@ -31,14 +31,14 @@ const Button = ({ text = "Button", onClick }) => {
       opacity: 0,
       width: 0,
       marginLeft: 0,
-      duration: 0.3,
+      duration: 0.2,
       ease: "power2.in"
     })
     
     // Scale button back
     gsap.to(buttonRef.current, {
       scale: 1,
-      duration: 0.3,
+      duration: 0.2,
       ease: "power2.out"
     })
   }

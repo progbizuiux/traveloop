@@ -102,7 +102,7 @@
 
         // Text elements styling
         h1 {
-            padding: 0 250px;
+            padding: 0 380px;
 
             @include breakpoint-less(md){
               padding: 0;
@@ -253,18 +253,3 @@
     }
 }
 
-// Accessibility: Reduce motion
-@media (prefers-reduced-motion: reduce) {
-    .banner {
-        .banner__content h1,
-        .banner__content h2,
-        .banner__content h3,
-        .banner__content h4,
-        .banner__content h5,
-        .banner__content h6,
-        .banner__content p,
-        .banner__content .banner__actions {
-            animation: none;
-        }
-    }
-}
