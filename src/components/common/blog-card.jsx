@@ -13,7 +13,7 @@ const BlogCard = ({image, title, description, date}) => {
                     <p className="card-text">{description}</p>
                     {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
 
-                    <p className="date">12-12-2025 <svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4" fill="none">
+                    <p className="date mt-4">12-12-2025 <svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4" fill="none">
                         <circle cx="2" cy="2" r="2" fill="#6C6C6C" />
                     </svg> 2 min read </p>
 
@@ -21,7 +21,7 @@ const BlogCard = ({image, title, description, date}) => {
                     <Link href={"/blog/details"}>
                     
                     
-                    <div className="card-action">
+                    <div className="card-action mt-5">
 
                         <p>
                             Read Article

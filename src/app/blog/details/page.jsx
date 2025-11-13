@@ -6,6 +6,7 @@ import Footer from "@/components/common/footer";
 import "@/styles/components/blog-details.scss"
 
 import Image from "next/image";
+import Link from "next/link";
 
 const Page = () => {
     const section1Ref = useRef(null);
@@ -30,15 +31,19 @@ const Page = () => {
                 <div className="section-gap-top-bottom">
 
 
-                    <div className="back-button">
+                        <Link href={"/blog"}>
+                    <div className="back-button mt-5">
 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M15 6C15 6 9.00001 10.4189 9 12C8.99999 13.5812 15 18 15 18" stroke="#D97706" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
 
                         <p>Back</p>
 
+                   
+
                     </div>
+                        </Link>
 
                     <div className="blog_meta">
 

@@ -18,7 +18,7 @@ const About = () => {
         <div className="about-page">
             <Banner title="Our Story: From Frustration to Adventure" description="We didn't just build a travel company. We built the solution we always wished we had." />
 
-            <section className="image-section section-gap-top-bottom pt-0">
+            <section className="image-section section-gap-top-bottom  pb-0">
 
                 <div className="container">
 
@@ -55,12 +55,13 @@ const About = () => {
                         <p>
                             "As passionate travelers, we founded Travel Loop because we were tired of the stress and chaos of modern trip planning—juggling 15 tabs and confusing visa forms. We knew there had to be a better way. Our mission is simple: to be your single, trusted travel ally. We combine our global expertise with deep, local knowledge to handle all the hard parts, from flights and visas to curated tours. We make your journey seamless so you can focus on what matters: the adventure."
                         </p>
-
-                        <Button text="Browse All Tours"/>
+                    <div className="mb-5 mb-sm-0">
+    <Button text="Browse All Tours"/>
+</div>
                     </div>
 
-                    <div className="col-md-6 col-lg-6">
-                        <Image src="/about/about-image.png" alt="about" width={500} height={500}  className="w-100 object-fluid" />
+                    <div className="col-md-6 col-lg-6 ">
+                        <Image src="/about/about-image.png" alt="about" width={500} height={500}  className="w-100 object-fit-cover  img-fluid" />
                         
                     </div>
                 </div>

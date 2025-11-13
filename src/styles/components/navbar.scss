@@ -30,26 +30,21 @@
 
   // Logo
   .logo {
-    flex-shrink: 0;
     // z-index: 1002;
     // max-width: 150px;
 
     img {
       // height: 100px;
-      width: 200px;
-      height: auto;
-      // max-width: 100%;
-      transition: height 0.25s ease;
-      display: block;
-    }
 
-    @media (max-width: 991px) {
-      max-width: 120px;
-
-      img {
-        height: 60px;
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+      @include breakpoint-above(xxl) {
+        height: 50px;
       }
     }
+
+
   }
 
   // Desktop Menu
@@ -146,12 +141,15 @@
 
     .logo img {
       // height: 70px;
-      height: auto;
-      width: 200px;
-
-      @media (max-width: 991px) {
-        height: 60px;
+   
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+        @include breakpoint-above(xxl) {
+        height: 50px;
       }
+   
+   
     }
 
     .menu ul li a {

@@ -104,7 +104,7 @@ const PackageCard = ({image, price, title, description  }) => {
         >
           <p ref={textRef}>View Europe Tours</p>
 
-          <Link href="/package/details">
+          <Link href="/packages/details">
           <button className="action-btn" ref={buttonRef}>
             <svg
               ref={svgRef}

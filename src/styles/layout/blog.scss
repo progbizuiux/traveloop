@@ -17,6 +17,17 @@
   
     }
   }
+  .mobile-card-gap {
+    @media (max-width: 767px) {
+        .col-lg-6, .col-md-6, .col-sm-12 {
+            margin-bottom: 24px; // Adjust the value as needed
+            
+            &:last-child {
+                margin-bottom: 0; // Remove margin from last item
+            }
+        }
+    }
+}
 
   .recent-posts {
     &-grid {

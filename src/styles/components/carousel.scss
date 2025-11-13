@@ -123,63 +123,63 @@
   background: #000; // Dark background to match gradient overlay
 }
 
+// Remove all the slide animations and replace with width-based expansion
+
 .card-background-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform, opacity;
+  // Simple fade transition, no sliding
+  transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform;
+  backface-visibility: hidden;
 
   @media (max-width: 768px) {
     transform: scale(1) !important;
   }
 
-  // Image animation states
+  // Default visible state
   &.image-visible {
     opacity: 1;
-    transform: translateX(0) scale(1);
+    transform: scale(1);
   }
 
-  // Sliding out - direction based
-  &.image-sliding-out-left {
-    opacity: 0;
-    transform: translateX(-100%) scale(0.95);
-    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
+  // Fade out (no slide)
+  &.image-sliding-out-left,
   &.image-sliding-out-right {
     opacity: 0;
-    transform: translateX(100%) scale(0.95);
-    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1);
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.6, 1);
   }
 
-  // Sliding in - direction based
-  &.image-sliding-in-from-right {
-    opacity: 0;
-    transform: translateX(100%) scale(1.05);
-    animation: imageSlideInFromRight 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  }
-
+  // Fade in (no slide)
+  &.image-sliding-in-from-right,
   &.image-sliding-in-from-left {
-    opacity: 0;
-    transform: translateX(-100%) scale(1.05);
-    animation: imageSlideInFromLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: imageFadeIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   }
 
-  // When card is expanded, add subtle zoom
+  // Expanded state - slight zoom
   .card-size-expanded & {
-    transform: translateX(0) scale(1.05);
+    transform: scale(1.05);
     
     @media (max-width: 768px) {
-      transform: translateX(0) scale(1) !important;
+      transform: scale(1) !important;
     }
   }
 
   .card-size-shrunk & {
-    transform: translateX(0) scale(1);
+    transform: scale(1);
+  }
+}
+
+// Simple fade animation for images
+@keyframes imageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -196,6 +196,7 @@
     rgba(0, 0, 0, 0.8) 100%
   );
   z-index: 1;
+  transition: opacity 0.3s ease;
 }
 
 .card-text-content {
@@ -206,8 +207,8 @@
   padding: 32px;
   color: white;
   z-index: 2;
-  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
   @media (max-width: 768px) {
     padding: 24px;
@@ -218,8 +219,8 @@
     font-weight: 700;
     margin-bottom: 12px;
     color: white;
-    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s,
-                transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+    transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s,
+                transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
 
     @media (max-width: 768px) {
       font-size: 28px;
@@ -232,8 +233,8 @@
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.9);
     margin: 0;
-    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.15s,
-                transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
+    transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
+                transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s;
 
     @media (max-width: 768px) {
       font-size: 14px;
@@ -268,48 +269,48 @@
     }
   }
 
-  // Sliding out state (when navigating away)
+  // Sliding out state (when navigating away) - faster exit
   &.content-sliding-out {
     opacity: 0;
     transform: translateY(0);
 
     .card-destination-title {
       opacity: 0;
-      transform: translateX(-30px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
+      transform: translateX(-25px);
+      transition: opacity 0.25s ease, transform 0.3s ease;
     }
 
     .card-destination-desc {
       opacity: 0;
-      transform: translateX(-30px);
-      transition: opacity 0.3s ease 0.05s, transform 0.3s ease 0.05s;
+      transform: translateX(-25px);
+      transition: opacity 0.25s ease 0.03s, transform 0.3s ease 0.03s;
     }
   }
 
-  // Sliding in state (when new content appears)
+  // Sliding in state (when new content appears) - smoother entrance
   &.content-sliding-in {
     opacity: 0;
     transform: translateY(0);
 
     .card-destination-title {
       opacity: 0;
-      transform: translateX(30px);
+      transform: translateX(25px);
     }
 
     .card-destination-desc {
       opacity: 0;
-      transform: translateX(30px);
+      transform: translateX(25px);
     }
 
     // Animate to visible
-    animation: slideContentIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: slideContentIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 
     .card-destination-title {
-      animation: slideTextIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s forwards;
+      animation: slideTextIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s forwards;
     }
 
     .card-destination-desc {
-      animation: slideTextIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+      animation: slideTextIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s forwards;
     }
   }
 
@@ -381,6 +382,7 @@
   justify-content: center;
   flex-shrink: 0;
   appearance: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
   &:hover:not(:disabled) {
     background: #333;
@@ -428,69 +430,26 @@
 
 }
 
-// Animation keyframes for smooth content transitions
-@keyframes slideContentIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideTextIn {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-// Image slide in from RIGHT (Next button)
+// Image slide in from RIGHT (Next button) - Fixed scale timing
 @keyframes imageSlideInFromRight {
   0% {
     opacity: 0;
-    transform: translateX(100%) scale(1.05);
+    transform: translate3d(30%, 0, 0) scale(1.01);
   }
   100% {
     opacity: 1;
-    transform: translateX(0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1.01);
   }
 }
 
-// Image slide in from LEFT (Previous button)
+// Image slide in from LEFT (Previous button) - Fixed scale timing
 @keyframes imageSlideInFromLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100%) scale(1.05);
+    transform: translate3d(-30%, 0, 0) scale(1.01);
   }
   100% {
     opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-}
-
-@keyframes slideInFromRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideOutToLeft {
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(-100%);
-    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(1.01);
   }
 }

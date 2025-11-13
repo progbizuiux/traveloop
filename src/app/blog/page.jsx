@@ -15,13 +15,13 @@ const Blog = () => {
                     <h3 className="fw-semibold">
                         Featured Post
                     </h3>
-                    <div className="row section-body-gap">
+                    <div className="row mobile-card-gap  section-body-gap">
 
                         <div className="col-lg-6 col-md-6 col-sm-12">
                             <BlogCard image={"/blog/blog-1.png"} description={"From the neon lights of Shinjuku to the serene temples of Kyoto, here's the perfect 10-day itinerary for your first trip to Japan."} title={"First-Timer's Guide to Japan: Tokyo, Kyoto & Osaka"} />
                         </div>
 
-                        <div className="col-lg-6 col-md-6 col-sm-12">
+                        <div className="col-lg-6 col-md-6 col-sm-12 ">
                             <BlogCard image={"/blog/blog-2.png"} description={" Beyond Khachapuri. We explore the 10 must-try dishes and the best local restaurants in Georgia's vibrant capital."} title={"A Food-Lover's Guide to Tbilisi, Georgia"} />
                         </div>
 
@@ -35,7 +35,7 @@ const Blog = () => {
                 <div className="container">
 
 
-                    <h3 className="text-center fw-medium">
+                    <h3 className="text-center ">
                         Recent Posts
                     </h3>
                     <div className="recent-posts-grid section-body-gap">
