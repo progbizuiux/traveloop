@@ -99,7 +99,7 @@ export const Navbar = () => {
           <div className="logo">
             <Link href="/">
               <Image
-                src={!isHomePage || isScrolled ? "/logo/main-logo.png" : "/logo/logo-white.png"}
+                src={!isHomePage || isScrolled ? "/updated-logo/black-logo.png" : "/updated-logo/white-logo.png"}
                 alt="Traveloop - Your Travel Partner"
                 width={120}
                 height={70}
