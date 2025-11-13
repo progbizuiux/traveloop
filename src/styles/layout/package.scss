@@ -1,0 +1,34 @@
+.package_page {
+  .package_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+
+    .package-card {
+      flex: 0 0 calc(33.333% - 20px);
+      box-sizing: border-box;
+      width: auto; // override Bootstrap's width:100%
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .package_page {
+    .package_wrapper {
+      .package-card {
+        flex: 0 0 calc(50% - 20px);
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .package_page {
+    .package_wrapper {
+      .package-card {
+        flex: 0 0 100%;
+      }
+    }
+  }
+}

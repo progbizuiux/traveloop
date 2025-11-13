@@ -1,0 +1,229 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+.timeline-component {
+  width: 100%;
+  position: relative;
+
+
+
+
+
+  .timeline-container {
+    position: relative;
+    margin: 0 auto;
+
+  }
+
+  // Desktop timeline elements - hidden on mobile
+  .timeline-line,
+  .timeline-progress,
+  .timeline-dot {
+    @include breakpoint-less(md) {
+      display: none !important;
+    }
+  }
+
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    width: 6px;
+    height: calc(100% - 30px);
+    background: linear-gradient(
+      to bottom,
+      rgba(46, 64, 66, 0.15),
+      rgba(46, 64, 66, 0.25),
+      rgba(46, 64, 66, 0.15)
+    );
+    transform: translateX(-50%);
+    z-index: 0;
+    border-radius: 3px;
+  }
+
+  .timeline-progress {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    width: 6px;
+    height: calc(100% - 30px);
+    background: linear-gradient(
+      to bottom,
+      #2e4042,
+      #8b7355
+    );
+    transform: translateX(-50%);
+    transform-origin: top center;
+    z-index: 1;
+    border-radius: 3px;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: 50%;
+    width: 22px;
+    height: 22px;
+    background: #8b7355;
+    border-radius: 50%;
+    border: 5px solid #f5f1ed;
+    z-index: 3;
+    transform: translateX(-50%);
+    box-shadow: 
+      0 0 0 3px rgba(139, 115, 85, 0.15),
+      0 4px 12px rgba(0, 0, 0, 0.1);
+
+    &--start {
+      top: 0;
+    }
+
+    &--end {
+      bottom: 10px;
+    }
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    opacity: 0;
+
+    @include breakpoint-less(lg) {
+      margin-bottom: 25px;
+    }
+
+    @include breakpoint-less(md) {
+      margin-bottom: 20px;
+      opacity: 1;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &__content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+
+      @include breakpoint-less(xl) {
+        gap: 35px;
+      }
+
+      @include breakpoint-less(lg) {
+        gap: 30px;
+      }
+
+      @include breakpoint-less(md) {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      &--reverse {
+        direction: rtl;
+
+        @include breakpoint-less(md) {
+          direction: ltr;
+        }
+
+        > * {
+          direction: ltr;
+        }
+      }
+    }
+  }
+
+  .image-wrapper {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 
+      0 10px 40px rgba(0, 0, 0, 0.08),
+      0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    @include breakpoint-less(md) {
+      border-radius: 16px;
+      box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.08),
+        0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.12),
+        0 4px 16px rgba(0, 0, 0, 0.08);
+
+      @include breakpoint-less(md) {
+        transform: translateY(-4px);
+      }
+
+      img {
+        transform: scale(1.05);
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+      @include breakpoint-less(xl) {
+        height: 350px;
+      }
+
+      @include breakpoint-less(lg) {
+        height: 320px;
+      }
+
+      @include breakpoint-less(md) {
+        height: 260px;
+      }
+
+      @include breakpoint-less(sm) {
+        height: 220px;
+      }
+    }
+  }
+
+  .text-content {
+    padding: 10px;
+
+    @include breakpoint-less(lg) {
+      padding: 8px;
+    }
+
+    @include breakpoint-less(md) {
+      padding: 0;
+    }
+
+   
+  }
+
+  // Mobile separator
+  @include breakpoint-less(md) {
+    .timeline-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 5%;
+      right: 5%;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        transparent,
+        rgba(0, 0, 0, 0.06) 20%,
+        rgba(0, 0, 0, 0.06) 80%,
+        transparent
+      );
+    }
+  }
+}

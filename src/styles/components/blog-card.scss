@@ -1,0 +1,61 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+.blog-card {
+  .card {
+    .card-body {
+      margin-top: 30px;
+      padding: 0;
+    }
+    .card-title {
+      color: var(--Text-Primary, #2e4042);
+      font-family: $font-family-montserrat;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+    //   letter-spacing: -2.52px;
+      text-transform: capitalize;
+    }
+
+    border: none;
+
+    border-radius: 24px;
+
+    padding: 20px;
+
+    img {
+      width: 100%;
+      border-radius: 24px;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .card-text {
+      margin-top: 20px;
+    }
+
+    .date {
+      color: #6c6c6c;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16.5px; /* 117.857% */
+      letter-spacing: -0.42px;
+      text-transform: capitalize;
+    }
+    .card-action {
+      p {
+        margin: 0;
+        color: var(--Text-Highlights, #d97706);
+        font-family: $font-family-montserrat;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px; /* 120% */
+      }
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+}

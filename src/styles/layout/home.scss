@@ -1,0 +1,488 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+$primary-text: #2c3e50;
+$secondary-text: #6c757d;
+$border-radius: 20px;
+$transition: all 0.3s ease;
+$gap: 1rem;
+
+.landing {
+.your-journey {
+  .journey-cards-wrapper {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    
+    @media (max-width: 768px) {
+      gap: 15px; // Reduce gap on mobile
+    }
+  }
+
+  .journey-card {
+    flex: 0 0 calc(33.333% - 20px); // Adjusted for 30px gap
+    min-width: 0;
+    padding: 0px;
+    background-color: #fff;
+    display: flex;
+    align-items: stretch;
+    border-radius: 24px;
+    height: 160px;
+
+    @media (max-width: 992px) {
+      flex: 0 0 calc(50% - 15px); // Adjusted for 30px gap
+    }
+
+    @media (max-width: 768px) {
+      flex: 0 0 calc(50% - 7.5px); // Fixed: 15px gap / 2 = 7.5px
+    }
+
+    h5 {
+
+      @include breakpoint-less(sm){
+        margin-bottom: 10px;
+      }
+    }
+
+    p {
+      @include breakpoint-less(sm){
+        line-height: 24px;
+      }
+    }
+
+    .card-image {
+      flex: 0 0 25.33%;
+      display: flex;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+
+      img {
+        border-radius: 24px 0 0px 24px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .card-content {
+      flex: 1;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @media (max-width: 768px) {
+        padding: 20px;
+      }
+    }
+  }
+}
+
+
+
+
+  .journeys {
+  .journeys-cards-wrapper {
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 24px;
+
+    @media (max-width: 768px) {
+      gap: 20px;
+    }
+
+    .package-card {
+      flex: 0 0 calc(33.333% - 16px);
+      min-width: 0;
+
+      @media (max-width: 1024px) {
+        flex: 0 0 calc(50% - 12px);
+      }
+
+      @media (max-width: 768px) {
+        flex: 0 0 100%;
+      }
+    }
+  }
+}
+
+
+
+// Variables
+$primary-text: #2c3e50;
+$secondary-text: #6c757d;
+$border-radius: 20px;
+$transition: all 0.3s ease;
+
+// Section styles
+
+
+// Bento Grid
+.bento-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+// Bento Items
+.bento-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: $border-radius;
+  background-color: #e9ecef;
+  cursor: pointer;
+  transition: $transition;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    
+    .bento-img {
+      transform: scale(1.05);
+    }
+  }
+  
+  // Height variants
+  &.bento-medium {
+    height: 250px;
+    
+    @media (max-width: 992px) {
+      height: 220px;
+    }
+    
+    @media (max-width: 768px) {
+      height: 200px;
+    }
+  }
+  
+  &.bento-tall {
+    height: 380px;
+    
+    @media (max-width: 992px) {
+      height: 340px;
+    }
+    
+    @media (max-width: 768px) {
+      height: 300px;
+    }
+  }
+  
+  &.bento-extra-tall {
+    height: 550px;
+    
+    @media (max-width: 992px) {
+      height: 480px;
+    }
+    
+    @media (max-width: 768px) {
+      height: 400px;
+    }
+  }
+}
+
+// Bento Image
+.bento-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: $transition;
+  display: block;
+}
+
+// Responsive adjustments
+@media (max-width: 991px) {
+  .bento-grid {
+    .col-lg-3 {
+      &:nth-child(3),
+      &:nth-child(4) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .travelers-section {
+    .section-subtitle br {
+      display: none;
+    }
+  }
+  
+  .bento-grid {
+    .row {
+      gap: 0.75rem !important;
+    }
+  }
+}
+
+// Optional: Add loading state
+.bento-img {
+  &[src=""],
+  &:not([src]) {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+// Optional: Add overlay effect on hover
+.travelers-section {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  
+
+}
+
+// Bento Grid
+.bento-grid {
+  max-width: 1600px;
+  margin: 0 auto;
+  
+ 
+}
+
+// Bento Items
+.bento-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: $border-radius;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  cursor: pointer;
+  transition: $transition;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
+    
+    .bento-img {
+      transform: scale(1.08);
+    }
+    
+    &::after {
+      opacity: 0.5;
+    }
+  }
+  
+  // Overlay gradient
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      180deg, 
+      rgba(0, 0, 0, 0) 0%, 
+      rgba(0, 0, 0, 0.15) 100%
+    );
+    opacity: 0;
+    transition: $transition;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  // Height variants matching the image
+  &.bento-square {
+    aspect-ratio: 1 / 1;
+    height: auto;
+    
+    @media (max-width: 992px) {
+      min-height: 200px;
+    }
+    
+    @media (max-width: 576px) {
+      min-height: 180px;
+    }
+  }
+  
+  &.bento-medium {
+    aspect-ratio: 16 / 10;
+    height: auto;
+    
+    @media (max-width: 992px) {
+      min-height: 220px;
+    }
+    
+    @media (max-width: 576px) {
+      min-height: 200px;
+    }
+  }
+  
+  &.bento-tall {
+    aspect-ratio: 3 / 4;
+    height: auto;
+    
+    @media (max-width: 992px) {
+      min-height: 320px;
+    }
+    
+    @media (max-width: 576px) {
+      min-height: 280px;
+    }
+  }
+  
+  &.bento-extra-tall {
+    aspect-ratio: 3 / 5;
+    height: auto;
+    
+    @media (max-width: 992px) {
+      min-height: 400px;
+    }
+    
+    @media (max-width: 768px) {
+      aspect-ratio: 4 / 5;
+      min-height: 350px;
+    }
+    
+    @media (max-width: 576px) {
+      min-height: 300px;
+    }
+  }
+}
+
+// Bento Image
+.bento-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: $transition;
+  display: block;
+  position: relative;
+  z-index: 0;
+}
+
+// Column specific adjustments
+@media (min-width: 992px) {
+  // Ensure proper alignment on desktop
+  .bento-grid {
+    .row {
+      align-items: flex-end; // Align all columns to bottom by default
+    }
+    
+    .col-lg-2 {
+      flex: 0 0 auto;
+      width: 18%;
+      
+      &:nth-child(2) {
+        // Lift 2nd column up
+        transform: translateY(-40px);
+        align-self: flex-start;
+      }
+      
+      &:nth-child(3) {
+        width: 28%;
+      }
+    }
+  }
+}
+
+// Adjust for medium screens
+@media (min-width: 768px) and (max-width: 991px) {
+  .bento-grid {
+    .row {
+      align-items: flex-end;
+    }
+    
+    .col-md-3:nth-child(2) {
+      // Lift 2nd column up on tablet
+      transform: translateY(-30px);
+    }
+  }
+}
+
+// Responsive adjustments for tablet
+@media (max-width: 991px) and (min-width: 768px) {
+  .bento-grid {
+    .col-md-6:nth-child(3) {
+      // Make center column full width on tablet
+      width: 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+// Mobile optimizations
+@media (max-width: 767px) {
+  .bento-grid {
+    .row {
+      gap: 0.75rem;
+    }
+    
+    .col-6 {
+      width: 50%;
+      flex: 0 0 50%;
+    }
+    
+    .col-12 {
+      width: 100%;
+      flex: 0 0 100%;
+    }
+  }
+  
+  .bento-item {
+    border-radius: 18px;
+  }
+}
+
+// Loading state
+.bento-img {
+  &[src=""],
+  &:not([src]) {
+    background: linear-gradient(
+      90deg, 
+      #f0f0f0 0%, 
+      #e0e0e0 50%, 
+      #f0f0f0 100%
+    );
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite ease-in-out;
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+// Smooth page transition
+.travelers-section {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Gap adjustments for flexbox columns
+.d-flex.flex-column {
+  gap: $gap;
+  
+  @media (max-width: 767px) {
+    gap: 0.75rem;
+  }
+}
+}

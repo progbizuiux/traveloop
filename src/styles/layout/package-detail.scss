@@ -1,0 +1,117 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+.package_details_page {
+  .header_section {
+ 
+    padding: 150px 0;
+    .header-icons {
+      display: flex;
+      gap: 50px;
+
+      .icon-wrapper {
+        span {
+          color: #6c6c6c;
+          text-align: center;
+          font-family: $font-family-figtree;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 18px; /* 150% */
+          text-transform: capitalize;
+        }
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+      }
+    }
+    .header-action {
+      button {
+        color: white;
+      }
+      display: flex;
+   
+      padding: 15px 24px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      background: var(--Text-Highlights, #d97706);
+
+      font-family: $font-family-montserrat;
+    }
+
+    .header-card {
+      background-color: white;
+
+      padding: 20px;
+
+      ul {
+        list-style-type: disc; // ensures the bullet is a solid dot
+
+        li {
+          color: var(--Text-Secondary, #1f2937);
+          font-family: $font-family-figtree;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 24px; /* 150% */
+          letter-spacing: -0.32px;
+          text-transform: capitalize;
+        }
+      }
+
+      .card-action {
+        button {
+          color: white;
+        }
+        display: flex;
+        padding: 10px 24px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        border-radius: 12px;
+        background: var(--Text-Highlights, #d97706);
+
+        font-family: $font-family-montserrat;
+      }
+    }
+
+    .image_container {
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 24px;
+        }
+      
+    }
+  }
+  .explore_other_packages {
+    .package_wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        .package-card {
+            flex: 0 0 calc(33.333% - 20px);
+            box-sizing: border-box;
+            width: auto; // override Bootstrap's width:100%
+          }
+          @include breakpoint-less(md) {
+            .package-card {
+              flex: 0 0 calc(50% - 20px);
+            }
+          }
+          @include breakpoint-less(sm) {
+            .package-card {
+              flex: 0 0 100%;
+            }
+          }
+          
+        
+    }
+    
+  }
+}

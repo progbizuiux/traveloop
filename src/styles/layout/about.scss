@@ -1,0 +1,34 @@
+
+@use "../helpers/mixins" as *;
+.about-page {
+    
+    .image-section {
+        background-color: #fff;
+
+        .image-container-1,.image-container-2 {
+            width: 100%;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 24px;
+            }
+            
+            
+        }
+
+        .image-container-1 {
+            margin-bottom: 3rem;
+            @include breakpoint-less(md){
+                margin-bottom: 0;
+            }
+        }
+        .image-container-2 {
+            margin-top: 3rem;
+            @include breakpoint-less(md){
+                margin-top: 0;
+            }
+        }
+    }
+}

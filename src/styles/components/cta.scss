@@ -1,0 +1,177 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
+.cta {
+  position: relative;
+  
+  .cta-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 24px;
+      @media (max-width: 768px) {
+        min-height: 400px; // Increased height for mobile
+      }
+    }
+
+    @media (max-width: 768px) {
+      min-height: 500px; // Increased height for mobile
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include breakpoint-less(sm) {
+    height:0; // Adjusted for smaller screens
+    }
+  }
+
+  // Left decorative images
+  .cta-decoration-left {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 250px;
+    pointer-events: none;
+
+    @media (max-width: 1200px) {
+      display: none;
+    }
+
+    .decoration-img {
+      position: absolute;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 16px;
+      }
+
+      &.decoration-img-1 {
+        top: 0%;
+        left: -10px;
+        width: 150px;
+        height: 120px;
+      }
+
+      &.decoration-img-2 {
+        top: 25%;
+        left: 30px;
+        width: 220px;
+        height: 200px;
+      }
+
+      &.decoration-img-3 {
+        bottom: 0%;
+        left: -20px;
+        width: 120px;
+        height: 150px;
+      }
+    }
+  }
+
+  // Right decorative images
+  .cta-decoration-right {
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 250px;
+    pointer-events: none;
+
+    @media (max-width: 1200px) {
+      display: none;
+    }
+
+    .decoration-img {
+      position: absolute;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 16px;
+      }
+
+      &.decoration-img-1 {
+        top: 0%;
+        right: -40px;
+        width: 180px;
+        height: 140px;
+      }
+
+      &.decoration-img-2 {
+        top: 30%;
+        right: -50px;
+        width: 250px;
+        height: 200px;
+      }
+
+      &.decoration-img-3 {
+        bottom: -10%;
+        right: 0px;
+        width: 150px;
+        height: 180px;
+      }
+    }
+  }
+
+  .cta-content {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    max-width: 90%;
+    z-index: 10;
+    width: 100%;
+    p {
+      padding: 0 270px;
+
+      @include breakpoint-less(sm){
+        padding : 0;
+      }
+    }
+    @media (max-width: 768px) {
+      max-width: 85%;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+     
+    }
+
+   
+
+    .cta-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      
+      button {
+        background-color: #000;
+     
+
+      
+      }
+    }
+  }
+}

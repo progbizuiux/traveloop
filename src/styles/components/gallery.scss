@@ -1,0 +1,408 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+.gallery {
+    .page-banner {
+
+    .page-banner-content {
+      p {
+        padding: 0 600px;
+
+        @include breakpoint-less(sm) {
+            padding: 0;
+        }
+      }
+    }
+  }
+.video-gallery {
+
+
+ 
+
+
+
+  &__header {
+    margin-bottom: 30px;
+  }
+
+  &__tabs {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__tab {
+    padding: 10px 20px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #7e7e7e;
+    font-family: $font-family-montserrat;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+
+    &:hover {
+      border-color: #9ca3af;
+      background: #f9fafb;
+    }
+
+    &--active {
+      background:#2E4042;
+      color: white;
+    //   border-color: #2563eb;
+
+      &:hover {
+        background: #2E4042;
+        // border-color: #1d4ed8;
+      }
+    }
+
+    &--all {
+      background: #1f2937;
+      color: white;
+      border-color: #1f2937;
+
+      &:hover {
+        background: #111827;
+        border-color: #111827;
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    animation: fadeIn 0.5s ease-in;
+  }
+
+  &__card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #000;
+    height: 100%;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+
+      .video-gallery__overlay {
+        opacity: 1;
+      }
+
+      .video-gallery__play-button {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+    }
+
+    // Odd row cards (1st, 3rd, 5th rows) - TALLER (videos only)
+    &:nth-child(8n + 1),
+    &:nth-child(8n + 2),
+    &:nth-child(8n + 3),
+    &:nth-child(8n + 4) {
+      height: 500px;
+
+      .video-gallery__play-button,
+      .video-gallery__title {
+        display: none;
+      }
+
+      .video-gallery__overlay {
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      &:hover .video-gallery__overlay {
+        background: rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    // Even row cards (2nd, 4th, 6th rows) - SHORTER (images with play button)
+    &:nth-child(8n + 5),
+    &:nth-child(8n + 6),
+    &:nth-child(8n + 7),
+    &:nth-child(8n + 8) {
+      height: 260px;
+    }
+
+    &--video {
+      .video-gallery__image {
+        display: none;
+      }
+    }
+
+    &--image {
+      background: #f3f4f6;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+    &::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 12px 0 12px 20px;
+      border-color: transparent transparent transparent #2563eb;
+      margin-left: 4px;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  &__card:hover &__title {
+    transform: translateY(0);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 1200px) {
+  .video-gallery {
+    &__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__card {
+      // Adjust pattern for 3 columns (6 cards per 2 rows)
+      // Odd rows - taller (videos)
+      &:nth-child(12n + 1),
+      &:nth-child(12n + 2),
+      &:nth-child(12n + 3) {
+        height: 360px;
+
+        .video-gallery__play-button,
+        .video-gallery__title {
+          display: none;
+        }
+      }
+
+      // Even rows - shorter (images)
+      &:nth-child(12n + 4),
+      &:nth-child(12n + 5),
+      &:nth-child(12n + 6) {
+        height: 240px;
+      }
+
+      // Odd rows - taller (videos)
+      &:nth-child(12n + 7),
+      &:nth-child(12n + 8),
+      &:nth-child(12n + 9) {
+        height: 400px;
+
+        .video-gallery__play-button,
+        .video-gallery__title {
+          display: none;
+        }
+      }
+
+      // Even rows - shorter (images)
+      &:nth-child(12n + 10),
+      &:nth-child(12n + 11),
+      &:nth-child(12n + 12) {
+        height: 240px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .video-gallery {
+    padding: 20px 16px;
+
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    &__card {
+      // Adjust pattern for 2 columns (4 cards per 2 rows)
+      // Odd rows - taller (videos)
+      &:nth-child(8n + 1),
+      &:nth-child(8n + 2) {
+        height: 300px;
+
+        .video-gallery__play-button,
+        .video-gallery__title {
+          display: none;
+        }
+      }
+
+      // Even rows - shorter (images)
+      &:nth-child(8n + 3),
+      &:nth-child(8n + 4) {
+        height: 220px;
+      }
+
+      // Odd rows - taller (videos)
+      &:nth-child(8n + 5),
+      &:nth-child(8n + 6) {
+        height: 300px;
+
+        .video-gallery__play-button,
+        .video-gallery__title {
+          display: none;
+        }
+      }
+
+      // Even rows - shorter (images)
+      &:nth-child(8n + 7),
+      &:nth-child(8n + 8) {
+        height: 220px;
+      }
+    }
+
+    &__tabs {
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+
+      &::-webkit-scrollbar {
+        height: 4px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #f3f4f6;
+        border-radius: 4px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #d1d5db;
+        border-radius: 4px;
+      }
+    }
+
+    &__tab {
+      padding: 6px 16px;
+      font-size: 13px;
+    }
+
+    &__play-button {
+      width: 50px;
+      height: 50px;
+
+      &::after {
+        border-width: 10px 0 10px 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .video-gallery {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    &__card {
+      // Odd rows - taller (videos)
+      &:nth-child(8n + 1),
+      &:nth-child(8n + 2) {
+        height: 260px;
+
+        .video-gallery__play-button,
+        .video-gallery__title {
+          display: none;
+        }
+      }
+
+      // Even rows - shorter (images)
+      &:nth-child(8n + 3),
+      &:nth-child(8n + 4) {
+        height: 180px;
+      }
+
+      // Odd rows - taller (videos)
+      &:nth-child(8n + 5),
+      &:nth-child(8n + 6) {
+        height: 260px;
+
+        .video-gallery__play-button,
+        .video-gallery__title {
+          display: none;
+        }
+      }
+
+      // Even rows - shorter (images)
+      &:nth-child(8n + 7),
+      &:nth-child(8n + 8) {
+        height: 180px;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+}

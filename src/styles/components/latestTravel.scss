@@ -1,0 +1,144 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+.latest-travel {
+  // Card Wrapper
+  .card-wrapper {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+
+    @media (max-width: 968px) {
+      gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  // Main Card
+  .main-card {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    flex: 1 1 calc(50% - 16px);
+    min-width: 0;
+
+    // &:hover {
+    //   transform: translateY(-6px);
+    //   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    // }
+
+    @media (max-width: 768px) {
+      flex: 1 1 100%;
+      flex-direction: column;
+    }
+
+    // Image Container
+    .image-card {
+      position: relative;
+      width: 45%;
+      min-height: 320px;
+      padding: 16px;
+      overflow: hidden;
+      flex-shrink: 0;
+
+      @media (max-width: 968px) {
+        min-height: 280px;
+      }
+
+      @media (max-width: 768px) {
+        width: 100%;
+        min-height: 250px;
+      }
+
+      @media (max-width: 480px) {
+        min-height: 220px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+        border-radius: 24px;
+
+        @include breakpoint-less(sm) {
+          height: 220px;
+        }
+      }
+    }
+
+    // Card Content
+    .card-content {
+      padding: 36px 0px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex-grow: 1;
+      justify-content: center;
+      .read-more {
+        color: var(--Text-Highlights, #D97706);
+font-family: $font-family-montserrat;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 150% */
+        
+      }
+
+      @media (max-width: 968px) {
+        padding: 0px 16px 16px;
+      }
+
+      @media (max-width: 768px) {
+        padding: 0px 16px 16px;
+      }
+    }
+  }
+
+  // Remove the variant styles that are no longer needed
+  .card-wrapper .main-card:not(:only-child) {
+    flex: 1 1 calc(50% - 16px);
+
+    @media (max-width: 768px) {
+      flex: 1 1 100%;
+    }
+  }
+}
+
+
+
+// Animation
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.latest-travel .main-card {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+
+  &:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+}

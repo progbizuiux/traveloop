@@ -1,0 +1,492 @@
+// Destination Slider - Custom Carousel with Unique Class Names
+.destination-slider-section {
+  padding: 80px 0;
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
+}
+
+.slider-header-block {
+  text-align: center;
+  margin-bottom: 60px;
+
+  .slider-main-title {
+ 
+
+  }
+
+  .slider-subtitle-text {
+  
+
+    
+  }
+}
+
+// Main Slider Wrapper
+.destination-slider-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+ 
+}
+
+.slider-track-container {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+
+  @media (max-width: 768px) {
+    gap: 0;
+    justify-content: center;
+  }
+}
+
+// Individual Card Item
+.slider-card-item {
+  position: relative;
+  height: 500px;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: flex 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: flex, transform;
+
+  @media (max-width: 768px) {
+    height: 450px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  // Expanded state (active or hovered)
+  &.card-size-expanded {
+    flex: 0 0 calc(40% - 15px);
+    
+    @media (max-width: 768px) {
+      flex: 0 0 100%;
+    }
+
+    .card-text-content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card-background-image {
+      transform: scale(1.05);
+    }
+  }
+
+  // Shrunk state (non-active, non-hovered)
+  &.card-size-shrunk {
+    flex: 0 0 calc(20% - 15px);
+
+    .card-text-content {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .card-background-image {
+      transform: scale(1);
+    }
+  }
+
+  // Active position (first card)
+  &.card-position-active {
+    z-index: 2;
+  }
+
+  // Hovered state
+  &.card-state-hovered {
+    z-index: 3;
+  }
+
+  // Mobile card
+  &.mobile-card-active {
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    .card-text-content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.card-inner-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000; // Dark background to match gradient overlay
+}
+
+.card-background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+
+  @media (max-width: 768px) {
+    transform: scale(1) !important;
+  }
+
+  // Image animation states
+  &.image-visible {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+
+  // Sliding out - direction based
+  &.image-sliding-out-left {
+    opacity: 0;
+    transform: translateX(-100%) scale(0.95);
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &.image-sliding-out-right {
+    opacity: 0;
+    transform: translateX(100%) scale(0.95);
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  // Sliding in - direction based
+  &.image-sliding-in-from-right {
+    opacity: 0;
+    transform: translateX(100%) scale(1.05);
+    animation: imageSlideInFromRight 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  &.image-sliding-in-from-left {
+    opacity: 0;
+    transform: translateX(-100%) scale(1.05);
+    animation: imageSlideInFromLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  // When card is expanded, add subtle zoom
+  .card-size-expanded & {
+    transform: translateX(0) scale(1.05);
+    
+    @media (max-width: 768px) {
+      transform: translateX(0) scale(1) !important;
+    }
+  }
+
+  .card-size-shrunk & {
+    transform: translateX(0) scale(1);
+  }
+}
+
+.card-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  z-index: 1;
+}
+
+.card-text-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px;
+  color: white;
+  z-index: 2;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media (max-width: 768px) {
+    padding: 24px;
+  }
+
+  .card-destination-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: white;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s,
+                transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+
+    @media (max-width: 768px) {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+  }
+
+  .card-destination-desc {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.15s,
+                transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  }
+
+  // Content visibility states - Enhanced with slide animation
+  &.content-visible {
+    opacity: 1;
+    transform: translateY(0);
+
+    .card-destination-title,
+    .card-destination-desc {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  &.content-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+
+    .card-destination-title {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+
+    .card-destination-desc {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+  }
+
+  // Sliding out state (when navigating away)
+  &.content-sliding-out {
+    opacity: 0;
+    transform: translateY(0);
+
+    .card-destination-title {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .card-destination-desc {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.3s ease 0.05s, transform 0.3s ease 0.05s;
+    }
+  }
+
+  // Sliding in state (when new content appears)
+  &.content-sliding-in {
+    opacity: 0;
+    transform: translateY(0);
+
+    .card-destination-title {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+
+    .card-destination-desc {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+
+    // Animate to visible
+    animation: slideContentIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+
+    .card-destination-title {
+      animation: slideTextIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s forwards;
+    }
+
+    .card-destination-desc {
+      animation: slideTextIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+    }
+  }
+
+  @media (max-width: 768px) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Progress Dots (Mobile)
+.slider-progress-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 0 20px;
+
+  @media (min-width: 769px) {
+    display: none;
+  }
+
+  .progress-dot-item {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #d9d9d9;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+
+    &:hover {
+      background: #999;
+    }
+
+    &.dot-active {
+      width: 24px;
+      border-radius: 4px;
+      background: #333;
+    }
+  }
+}
+
+// Navigation Controls
+.slider-navigation-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 40px;
+
+  @media (max-width: 768px) {
+    margin-top: 32px;
+  }
+}
+
+.nav-button-item {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  background: white;
+  color: #333;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  appearance: none;
+
+  &:hover:not(:disabled) {
+    background: #333;
+    color: white;
+    // transform: scale(1.05);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.95);
+  }
+
+  @media (max-width: 768px) {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.view-all-destinations-link {
+
+
+   p{
+    color: var(--Text-Highlights, #D97706);
+    text-decoration: underline !important;
+    font-size: 16px;
+    font-weight: 500;
+   }
+  transition: all 0.3s ease;
+  display: inline-block;
+
+ 
+
+  &:active {
+    transform: translateY(0);
+  }
+
+
+}
+
+// Animation keyframes for smooth content transitions
+@keyframes slideContentIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideTextIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Image slide in from RIGHT (Next button)
+@keyframes imageSlideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+// Image slide in from LEFT (Previous button)
+@keyframes imageSlideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}

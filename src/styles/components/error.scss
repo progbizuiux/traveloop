@@ -1,0 +1,71 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+.not-found {
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 45px;
+        @include breakpoint-less(md){
+            gap: 30px;
+        }
+        video {
+            width: 100%;
+            max-width: 300px;
+        }
+        h1 {
+            color: rgb(0, 0, 0);
+            line-height: normal;
+            font-size: 64px;
+            text-align: center;
+            font-weight: 900;
+            font-family: $font-family-primary;
+            @include breakpoint-less(md) {
+                font-size: 76px;
+            }
+            @include breakpoint-less(sm) {
+                font-size: 50px
+            }
+        }
+        .error-status {
+            position: relative;
+            .bg {
+                width: 100%;
+                height: auto;
+            }
+            .overlay {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 50%;
+                height: auto;
+            }
+        }
+        p {
+            color: rgba(0, 0, 0, 0.60);
+            text-align: center;
+            margin-bottom: 0;
+
+            @include breakpoint-less(sm){
+                br{
+                    display: none;
+                }
+            }
+        }
+        .btn {
+            border: 1.588px solid #2F0446;
+            padding: 14px 34px;
+            @include breakpoint-less(md) {
+                padding: 10px 30px;
+            }
+            @include breakpoint-less(sm) {
+                padding: 10px 20px;
+            }
+        }
+    }
+}

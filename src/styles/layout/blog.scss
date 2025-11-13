@@ -1,0 +1,66 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+.blog-page {
+  .page-banner {
+    .page-banner-content {
+
+        p{
+            padding: 0 420px;
+
+              @include breakpoint-less(sm) {
+          padding: 0;
+        }
+        @include breakpoint-less(lg) {
+          padding: 0;
+          
+        }
+            
+        }
+      h1 {
+        padding: 0 350px;
+        @include breakpoint-less(sm) {
+          padding: 0;
+        }
+        @include breakpoint-less(lg) {
+          padding: 0;
+          
+        }
+      }
+    }
+  }
+
+  .recent-posts {
+    &-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      > * {
+        flex: 0 0 calc(33.333% - 14px);
+      }
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 992px) {
+    .recent-posts {
+      &-grid {
+        > * {
+          flex: 0 0 calc(50% - 10px);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .recent-posts {
+      &-grid {
+        gap: 16px;
+
+        > * {
+          flex: 0 0 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+  .journeys {
+  .journeys-cards-wrapper {
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 24px;
+
+    @media (max-width: 768px) {
+      gap: 20px;
+    }
+
+    .package-card {
+      flex: 0 0 calc(33.333% - 16px);
+      min-width: 0;
+
+      .card-body {
+        padding: 0;
+        margin-top: 30px;
+      }
+
+      @media (max-width: 1024px) {
+        flex: 0 0 calc(50% - 12px);
+      }
+
+      @media (max-width: 768px) {
+        flex: 0 0 100%;
+      }
+    }
+  }
+}

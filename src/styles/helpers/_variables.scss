@@ -1,0 +1,162 @@
+:root {
+  // themes color
+  --color-primary: #141414;
+  --color-secondary: #1f1f25;
+  --color-body: #74787c;
+
+  // title color
+  --color-heading-1: #fff;
+  --color-white: #fff;
+
+  // notify Colors
+  --color-success: #3eb75e;
+  --color-danger: #ff0003;
+  --color-warning: #ff8f3c;
+  --color-info: #1ba2db;
+
+  //Social icon colors
+  --color-facebook: #3b5997;
+  --color-twitter: #1ba1f2;
+  --color-youtube: #ed4141;
+  --color-linkedin: #0077b5;
+  --color-pinterest: #e60022;
+  --color-instagram: #c231a1;
+  --color-vimeo: #00adef;
+  --color-twitch: #6441a3;
+  --color-discord: #7289da;
+
+  //transition easing
+  --transition: 0.3s;
+
+
+  //Fonts Size
+  --font-size-b1: 16px;
+
+  --font-size-b2: 16px;
+  --font-size-b3: 12px;
+  --font-size-b4: 10px;
+
+  //Line Height
+  --line-height-b1: 26px;
+  --line-height-b2: 26px;
+  --line-height-b3: 1.7;
+  --h1: 60px;
+  --h2: 48px;
+  --h3: 30px;
+  --h4: 26px;
+  --h5: 24px;
+  --h6: 18px;
+}
+
+// Font styles //
+$font-family-primary: var(--font-clash), sans-serif;
+$font-family-secondary: var(--font-messina), sans-serif;
+$font-family-inter: var(--font-inter), sans-serif;
+$font-family-roobert: var(--font-roobert), sans-serif;
+$font-family-montserrat: var(--font-montserrat), sans-serif;
+$font-family-figtree: var(--font-figtree), sans-serif;
+// Font weights //
+$font-weight-bold: 700;
+$font-weight-semi-bold: 600;
+$font-weight-medium: 500;
+$font-weight-regular: 400;
+$font-weight-light: 300;
+
+// Colors //
+$color-primary: #141414;
+$color-secondary: #1f1f25;
+$color-dark: #000;
+
+// body color
+$color-body: #74787c;
+$color-white: #fff;
+
+$dark: rgb(28, 29, 36);
+$dark-90: rgba(28, 29, 36, 0.9);
+$dark-85: rgba(28, 29, 36, 0.85);
+$dark-80: rgba(28, 29, 36, 0.8);
+$dark-70: rgba(28, 29, 36, 0.7);
+$dark-60: rgba(28, 29, 36, 0.6);
+$dark-50: rgba(28, 29, 36, 0.5);
+$dark-40: rgba(28, 29, 36, 0.4);
+$dark-30: rgba(28, 29, 36, 0.3);
+$dark-20: rgba(28, 29, 36, 0.2);
+$dark-10: rgba(28, 29, 36, 0.1);
+$dark-05: rgba(28, 29, 36, 0.05);
+$black-90: rgba(0, 0, 0, 0.9);
+$black-85: rgba(0, 0, 0, 0.85);
+$black-80: rgba(0, 0, 0, 0.8);
+$black-70: rgba(0, 0, 0, 0.7);
+$black-60: rgba(0, 0, 0, 0.6);
+$black-50: rgba(0, 0, 0, 0.5);
+$black-40: rgba(0, 0, 0, 0.4);
+$black-30: rgba(0, 0, 0, 0.3);
+$black-20: rgba(0, 0, 0, 0.2);
+$black-10: rgba(0, 0, 0, 0.1);
+$white-95: rgba(255, 255, 255, 0.9);
+$white-90: rgba(255, 255, 255, 0.9);
+$white-80: rgba(255, 255, 255, 0.8);
+$white-70: rgba(255, 255, 255, 0.7);
+$white-60: rgba(255, 255, 255, 0.6);
+$white-50: rgba(255, 255, 255, 0.5);
+$white-40: rgba(255, 255, 255, 0.4);
+$white-30: rgba(255, 255, 255, 0.3);
+$white-20: rgba(255, 255, 255, 0.2);
+$white-15: rgba(255, 255, 255, 0.15);
+$white-10: rgba(255, 255, 255, 0.1);
+$primary: rgb(120, 122, 124);
+$primary-lighter: rgb(170, 171, 172);
+$border-gray: rgb(220, 223, 226);
+$gray: rgb(241, 242, 250);
+$button-gray: rgb(236, 237, 245);
+$green: #32cd32;
+$yellow: #ffb657;
+$red: #e32227;
+$iceblue: #e8f3ff;
+
+//
+// Gradient Colors //
+//
+$gradient-1: linear-gradient(45deg, #ff5988, #500c7f);
+$gradient-2: linear-gradient(45deg, #2fbdff, #0f2f40);
+$gradient-3: linear-gradient(45deg, #ff2f78, #ff7582);
+$gradient-4: linear-gradient(45deg, #00dbde, #fc00ff);
+$gradient-5: linear-gradient(45deg, #007990, #6ce5c0);
+
+$bg-fade-gradient-1: linear-gradient(90deg, #ff5988, transparent 90%);
+$bg-fade-gradient-2: linear-gradient(90deg, #2fbdff, transparent 90%);
+$bg-fade-gradient-3: linear-gradient(90deg, #ff2f78, transparent 90%);
+$bg-fade-gradient-4: linear-gradient(90deg, #00dbde, transparent 90%);
+$bg-fade-gradient-5: linear-gradient(90deg, #007990, transparent 90%);
+$bg-fade-dark: linear-gradient(90deg, $dark-50, transparent 90%);
+
+//
+// Button Gradients //
+//
+$button-gradient-1: linear-gradient(to right, #ff5988, #500c7f, #ff5988);
+$button-gradient-2: linear-gradient(to right, #2fbdff, #0f2f40, #2fbdff);
+$button-gradient-3: linear-gradient(to right, #ff2f78, #ff7582, #ff2f78);
+$button-gradient-4: linear-gradient(to right, #00dbde, #fc00ff, #00dbde);
+$button-gradient-5: linear-gradient(to right, #007990, #6ce5c0, #007990);
+
+//transition easing
+$transition: 0.3s;
+
+// Heading Font
+$h1: 60px;
+$h2: 48px;
+$h3: 30px;
+$h4: 26px;
+$h5: 24px;
+$h6: 18px;
+
+$raduis-12: 12px;
+$raduis-14: 14px;
+$raduis-16: 16px;
+$raduis-18: 18px;
+$raduis-20: 20px;
+$raduis-22: 22px;
+$raduis-24: 24px;
+$raduis-26: 26px;
+$raduis-28: 28px;
+

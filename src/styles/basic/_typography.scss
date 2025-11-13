@@ -1,0 +1,425 @@
+// @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+// @use "./styles/theme.scss" as *;
+// @use "styles/theme" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as *;
+
+//
+// Typography Variables
+//
+$h1-size: 68px;
+$h2-size: 48px;
+$h3-size: 30px;
+$h4-size: 32px;
+$h5-size: 24px;
+$h6-size: 18px;
+
+
+
+// Media Query Font Sizes
+$h1-md: 55px;
+$h2-md: 32px;
+$h3-md: 28px;
+$h4-md: 24px;
+$h5-md: 18px;
+
+$h1-sm: 40px;
+$h2-sm: 26px;
+$h3-sm: 24px;
+$h4-sm: 20px;
+$h5-sm: 18px;
+
+$font-size-b1: 16px;
+$font-size-b2: 14px;
+$font-size-b3: 12px;
+$font-size-b4: 10px;
+
+//
+// Colors //
+//
+$color-primary: #1C1D1F;
+$color-secondary: #4C556C;
+
+// body color
+$color-body: #74787C;
+$color-white: #FFF;
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+address,
+p,
+pre,
+blockquote,
+menu,
+ol,
+
+table,
+hr {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    word-break: break-word;
+    font-family: $font-family-montserrat;
+    line-height: 1.4074;
+    color: $color-primary;
+}
+
+h1,
+.h1 {
+    font-size: $h1-size;
+    line-height: 91px;
+    font-weight: normal;
+}
+
+h2,
+.h2 {
+    font-size: $h2-size;
+    line-height: 1.23;
+}
+
+h3,
+.h3 {
+    font-size: $h3-size;
+    line-height: 54px;
+}
+
+h4,
+.h4 {
+    font-size: $h4-size;
+    line-height: 1.25;
+}
+
+h5,
+.h5 {
+    font-size: $h5-size;
+    line-height: 1.24;
+}
+
+h6,
+.h6 {
+    font-size: $h6-size;
+    line-height: 1.25;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    a {
+        color: inherit;
+    }
+}
+
+.bg-color-tertiary {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6 {
+        color: #fff;
+    }
+
+    p {
+        color: #6c7279;
+
+    }
+
+    a {
+        color: #6c7279;
+    }
+}
+
+@include breakpoint-less(lg) {
+
+    h1,
+    .h1 {
+        font-size: $h1-md;
+    }
+
+    h2,
+    .h2 {
+        font-size: $h2-md ;
+    }
+
+    h3,
+    .h3 {
+        font-size: $h3-md;
+    }
+
+    h4,
+    .h4 {
+        font-size: $h4-md;
+    }
+
+    h5,
+    .h5 {
+        font-size: $h5-md;
+    }
+}
+
+@include breakpoint-less(md) {
+
+    h1,
+    .h1 {
+        font-size: $h1-sm;
+    }
+
+    h2,
+    .h2 {
+        font-size: $h2-sm;
+        line-height: 40px;
+    }
+
+    h3,
+    .h3 {
+        font-size: $h3-sm ;
+    }
+
+    h4,
+    .h4 {
+        font-size: $h4-sm ;
+    }
+
+    h5,
+    .h5 {
+        font-size: $h5-sm ;
+    }
+}
+
+
+// h1,
+// .h1,
+// h2,
+// .h2,
+// h3,
+// .h3,h4,
+// .h4,
+// h5,
+// .h5,h6,
+// .h6 {
+//     font-weight: $font-weight-semi-bold;
+// }
+
+
+
+
+p {
+    font-size: 16px;
+    // font-family: $font-family-figtree;
+    font-family: var(--font-figtree);
+    line-height: var(--line-height-b2);
+    font-weight: $font-weight-regular;
+    color: #1e1e1e;
+    margin: 0 0 25px;
+    word-spacing: 1px;
+
+    @include breakpoint-less(sm) {
+        margin: 0 0 20px;
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    &.b1 {
+        font-size: var(--font-size-b1);
+        line-height: var(--line-height-b1);
+    }
+
+    &.b3 {
+        font-size: var(--font-size-b3);
+        line-height: var(--line-height-b3);
+    }
+
+    &.has-large-font-size {
+        line-height: 1.5;
+        font-size: 36px;
+    }
+
+    &.has-medium-font-size {
+        font-size: 24px;
+        line-height: 36px;
+    }
+
+    &.has-small-font-size {
+        font-size: 13px;
+    }
+
+    &.has-very-light-gray-color {
+        color: $color-white;
+    }
+
+    &.has-background {
+        padding: 20px 30px;
+    }
+
+    &.b1 {
+        font-size: var(--font-size-b1);
+        line-height: var(--line-height-b1);
+    }
+
+    &.b2 {
+        font-size: var(--font-size-b2);
+        line-height: var(--line-height-b2);
+    }
+
+    &.b3 {
+        font-size: var(--font-size-b3);
+        line-height: var(--line-height-b3);
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.b1 {
+    font-size: var(--font-size-b1);
+    line-height: var(--line-height-b1);
+}
+
+.b2 {
+    font-size: var(--font-size-b2);
+    line-height: var(--line-height-b2);
+}
+
+.b3 {
+    font-size: var(--font-size-b3);
+    line-height: var(--line-height-b3);
+}
+
+.b4 {
+    font-size: var(--font-size-b4);
+    line-height: var(--line-height-b4);
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0 0 20px;
+    width: 100%;
+}
+
+table a,
+table a:link,
+table a:visited {
+    text-decoration: none;
+}
+
+
+
+var {
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+
+
+
+
+
+.typo-title-area {
+    .title {
+        margin-top: 0;
+    }
+}
+
+.paragraph-area {
+    p.disc {
+        margin-bottom: 20px;
+        color: #fff;
+    }
+}
+
+.tag {
+    span {
+        position: relative;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 600;
+        color: #ff007f;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-family: $font-family-inter;
+        margin: 0 0 24px 48px;
+
+        @include breakpoint-less(md) {
+            margin: 0 0 12px 40px;
+        }
+
+        @include breakpoint-less(sm) {
+            margin-bottom: 0;
+            font-size: 10px;
+        }
+
+    }
+
+    span::before,
+    span::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 40px;
+        height: 1px;
+        background-color: #ff007f;
+
+        @include breakpoint-less(md) {
+            width: 30px;
+        }
+    }
+
+    span::before {
+        left: -45px;
+
+        @include breakpoint-less(md) {
+            left: -40px;
+        }
+    }
+
+    span::after {
+        right: -45px;
+
+        @include breakpoint-less(md) {
+            right: -40px;
+        }
+    }
+}
