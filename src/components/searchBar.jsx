@@ -93,7 +93,7 @@ const SearchForm = ({ destination, dateRange, onDestinationChange, onDateRangeCh
                     <path d="m21 21-4.35-4.35" />
                 </svg>
             </button> */}
-            <Button text='Search for'/>
+            <Button   text='Search for' margin={false}/>
         </div>
     );
 };

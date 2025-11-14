@@ -8,43 +8,46 @@ import Image from 'next/image';
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
+
 const TravelersAdventuresCreative = () => {
+  const bentoSection = useRef(null);
   const bentoItemsRef = useRef([]);
 
-  useEffect(() => {
-    // Clear the refs array
-    bentoItemsRef.current = bentoItemsRef.current.filter(Boolean);
+useEffect(() => {
+  bentoItemsRef.current = bentoItemsRef.current.filter(Boolean);
 
-    // Set initial state
+  // Delay animation to give images time to load
+  const timer = setTimeout(() => {
     gsap.set(bentoItemsRef.current, {
       opacity: 0,
       y: 40,
       scale: 0.95
     });
 
-    // Create scroll-triggered animation
     gsap.to(bentoItemsRef.current, {
       opacity: 1,
       y: 0,
       scale: 1,
-      duration: 0.7,
-      stagger: 0.1, // Cards appear one after another
-      ease: "power3.out",
+      duration: 1,
+      stagger: 0.1,
+      ease: "power2.out",
       scrollTrigger: {
-        trigger: ".bento-grid",
-        start: "top 75%",
-        toggleActions: "play none none none",
+        trigger: bentoSection.current,
+        start: "top 5%",
+        end: "bottom 15%",
+        toggleActions: "play reverse play reverse",
+        // Alternative: toggleActions: "play none none reverse"
       }
     });
+  }, 500);
 
-    // Cleanup
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
-
+  return () => {
+    clearTimeout(timer);
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+  };
+}, []);
   return (
-    <section className="travelers-section py-5">
+    <section ref={bentoSection} className="travelers-section py-5 ">
       <div className="container">
         {/* Header */}
         <div className="text-center mb-5">
@@ -57,7 +60,7 @@ const TravelersAdventuresCreative = () => {
         </div>
 
         {/* Bento Grid */}
-        <div className="bento-grid section-body-gap">
+        <div  className="bento-grid section-body-gap">
           <div className="row g-3 g-md-4">
             {/* Column 1 */}
             <div className="col-12 col-md-6 col-lg-3">

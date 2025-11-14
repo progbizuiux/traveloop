@@ -3,7 +3,7 @@ import { useRef } from "react"
 import { gsap } from "gsap"
 import "@/styles/basic/_button.scss"
 
-const Button = ({ text = "Button", onClick }) => {
+const Button = ({ text = "Button", onClick,margin=true }) => {
   const buttonRef = useRef(null)
   const arrowRef = useRef(null)
 
@@ -46,7 +46,7 @@ const Button = ({ text = "Button", onClick }) => {
   return (
     <button 
       ref={buttonRef}
-      className="custom-button mt-5"
+      className={margin ? "custom-button mt-5" : "custom-button"}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
