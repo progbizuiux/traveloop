@@ -91,7 +91,7 @@ const PackageCard = ({image, price, title, description  }) => {
       </div>
 
       <div className="card-body">
-        <h3 className="card-title">{title}</h3>
+        <h4 className="card-title">{title}</h4>
         <p className="card-text">
           {description}
         </p>

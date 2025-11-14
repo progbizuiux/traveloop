@@ -199,8 +199,8 @@ const Page = () => {
 
                 <div className="container">
 
-                    <h2>
-                        Continue Reading                </h2>
+                    <h3>
+                        Continue Reading                </h3>
 
 
                     <div className="blog-card-wrapper">

@@ -9,7 +9,7 @@ const BlogCard = ({image, title, description, date}) => {
             <div className="card" >
                 <Image width={500} height={500} src={image} className="card-img-top" alt="..." />
                 <div className="card-body">
-                    <h2 className="card-title">{title} </h2>
+                    <h4 className="card-title">{title} </h4>
                     <p className="card-text">{description}</p>
                     {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
 

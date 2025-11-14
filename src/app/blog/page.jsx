@@ -56,7 +56,7 @@ const Blog = () => {
                         <BlogCard image={"/blog/blog-7.png"} description={"From offline maps to instant currency conversion, these are the apps our expert travelers swear by for a seamless journey."} title={"10 Essential Travel Apps You Need Before You Fly"} />
 
 
-                        <BlogCard image={"/blog/blog-8.png"} description={"Increase your chances of a first-time approval. We break down the simple, common errors that lead to visa rejection."} title={"5 Common Mistakes to Avoid on Your Schengen Visa Application"} />
+                        <BlogCard image={"/blog/blog-8.png"} description={"Increase your chances of a first-time approval. We break down the simple, common errors that lead to visa rejection."} title={"5 Common Mistakes to Avoid on Your Schengen Visa ..."} />
                     </div>
                 </div>
             </section>

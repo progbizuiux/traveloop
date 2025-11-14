@@ -48,7 +48,7 @@
         margin: 0;
         color: var(--Text-Highlights, #d97706);
         font-family: $font-family-montserrat;
-        font-size: 20px;
+        font-size: 16px;
         @include breakpoint-less(sm){
           font-size: 16px;
         }
