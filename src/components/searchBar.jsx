@@ -68,7 +68,7 @@ const SearchForm = ({ destination, dateRange, onDestinationChange, onDateRangeCh
                     </svg>
                 </div>
                 <input
-                    type="date"
+                    type="input"
                     placeholder="I'm Free To Travel..."
                     value={dateRange}
                     onChange={(e) => onDateRangeChange(e.target.value)}

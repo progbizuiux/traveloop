@@ -158,7 +158,8 @@ const Page = () => {
 
                             <p>
                                 Morning: Walk across the iconic Shibuya Scramble Crossing, the world's busiest intersection. Say hello to the Hachiko statue. Afterward, explore the trendy, youthful fashion streets of Harajuku (Takeshita Street) and see the calm oasis of Meiji Jingu Shrine right next to it.
-                                Evening: Head to Roppongi Hills for a more upscale vibe, great art at the Mori Art Museum, and arguably the best panoramic view of the city (including Tokyo Tower) from the "Tokyo City View" observation deck.
+                                Evening: He
+                                ad to Roppongi Hills for a more upscale vibe, great art at the Mori Art Museum, and arguably the best panoramic view of the city (including Tokyo Tower) from the "Tokyo City View" observation deck.
                             </p>
 
                             {/* <h5 ref={section4Ref}>
