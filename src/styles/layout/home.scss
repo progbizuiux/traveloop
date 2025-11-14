@@ -8,6 +8,15 @@ $gap: 1rem;
 
 .landing {
 .your-journey {
+  // background-color: yellow;
+  .heading {
+    h2 {
+      @include breakpoint-less(sm){
+        text-align: center;
+        // text-align: start;
+      }
+    }
+  }
   .journey-cards-wrapper {
     display: flex;
     gap: 30px;

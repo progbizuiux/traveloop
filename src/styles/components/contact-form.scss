@@ -96,22 +96,20 @@ text-transform: capitalize;
   }
 
   .submit-btn {
-    width: 100%;
-    padding: 16px 24px; // Increased for better tap target
-    color: #fff;
-    font-family: $font-family-montserrat;
-    font-size: 19px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: -1.33px;
+     background-color: #d97706;
+    font-size: 18px;
     border-radius: 12px;
-    background: var(--Text-Highlights, #d97706);
-    border: none;
+    color: #FFFFFF;
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-raleway);
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-    margin-top: 16px; // Consistent spacing
-
+    border: none;
+    outline: none;
+    position: relative;
+    overflow: hidden;
     &:hover {
       background: var(--Text-Highlights, #d97706);
       transform: translateY(-2px);
@@ -147,10 +145,10 @@ text-transform: capitalize;
       }
     }
 
-    .submit-btn {
-      padding: 14px 20px;
-      font-size: 15px;
-    }
+    // .submit-btn {
+    //   padding: 14px 20px;
+    //   font-size: 15px;
+    // }
   }
 }
 

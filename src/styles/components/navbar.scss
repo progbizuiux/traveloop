@@ -380,16 +380,16 @@
         }
 
         .mobile-menu__cta {
-          opacity: 0;
-          animation: fadeInMenu 0.5s ease forwards;
-          animation-delay: 0.9s;
-          margin-top: auto;
+          // opacity: 0;
+          // animation: fadeInMenu 0.5s ease forwards;
+          // animation-delay: 0.9s;
+          // margin-top: auto;
 
           button {
             width: 100%;
-            padding: 18px 32px;
-            font-size: 18px;
-            font-weight: 600;
+            // padding: 18px 32px;
+            // font-size: 18px;
+            // font-weight: 600;
           }
         }
       }

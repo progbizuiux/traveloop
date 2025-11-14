@@ -1,6 +1,7 @@
 import Button from "../ui/Button/Button";
 import Image from "next/image";
 import "@/styles/components/latestTravel.scss"
+import Link from "next/link";
 const LatestTravel = () => {
     return (
         <section className="latest-travel section-gap-top-bottom">
@@ -13,7 +14,9 @@ const LatestTravel = () => {
                     <p>
                     Stay updated with our expert guides, destination spotlights, and exclusive travel advice.
                 </p>
-                <Button text="View All Articles" />
+                <Link href="/blog">
+                    <Button text="View All Articles" />
+                </Link>
                 </div>
                 <div className="card-wrapper section-body-gap">
                     <div className="main-card">

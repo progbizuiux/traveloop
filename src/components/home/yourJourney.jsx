@@ -4,6 +4,7 @@ import Image from "next/image";
 import Button from "../ui/Button/Button";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -203,7 +204,9 @@ const YourJourney = () => {
                         className="d-flex justify-content-center w-100"
                         ref={buttonRef}
                     >
+                        <Link href="/packages">
                         <Button text="Start Planning" />
+                        </Link>
                     </div>
                 </div>
             </div>

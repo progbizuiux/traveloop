@@ -29,7 +29,7 @@ const Banner = () => {
                     <SearchBar />
                 </div>
 
-                <div className="d-lg-none">
+                <div className="d-lg-none mt-5">
                     <SearchCard />
                 </div>
 

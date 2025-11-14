@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import "@/styles/components/carousel.scss";
+import Link from "next/link";
 
 const destinations = [
   {
@@ -416,11 +417,11 @@ const DestinationSlider = () => {
                 </svg>
               </button>
             </div>
-            <a href="/destinations" className="view-all-destinations-link">
+            <Link href="/packages" className="view-all-destinations-link">
               <p>
                 View All Destinations
               </p>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

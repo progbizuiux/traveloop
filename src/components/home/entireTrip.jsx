@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Button from "../ui/Button/Button";
-
+import Link from "next/link";
 const EntireTrip = () => {
     return (
         <section className="bg-white section-gap-top-bottom">
@@ -20,7 +20,9 @@ const EntireTrip = () => {
                         </p>
 
                         <div className="mt-5">
+                            <Link href="/packages">
                             <Button text="Browse All Tours"/>
+                            </Link>
                         </div>
                     </div>
 

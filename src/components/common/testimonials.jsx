@@ -11,7 +11,7 @@ const testimonials = [
     text: 'Booking My Entire European Tour Through Travel Loops Was The Best Decision We Made. They Handled Our Flights, The Complex Schengen Visas, And Every Single Hotel. We Didn\'t Have To Worry About A Thing Except Enjoying The Trip. Truly A Seamless, All-In-One Service!',
     author: 'Sarah & Mark T.',
     location: 'Toronto, Canada',
-    avatar: '/avatars/sarah.jpg'
+    avatar: '/users/user-1.png'
   },
   {
     id: 2,
@@ -104,7 +104,7 @@ export const TestimonialsCarousel = () => {
     <section className="testimonials-section container-fluid">
       <div className="testimonials-header">
         <h2 className="testimonials-title">Stories From Our Travelers</h2>
-        <div className="embla__buttons d-sm-block d-none">
+<div className="embla__buttons d-none d-sm-flex gap-3">
           <button
             className="embla__button "
             onClick={scrollPrev}

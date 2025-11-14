@@ -8,45 +8,43 @@ import Image from 'next/image';
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-
 const TravelersAdventuresCreative = () => {
-  const bentoSection = useRef(null);
   const bentoItemsRef = useRef([]);
 
-useEffect(() => {
-  bentoItemsRef.current = bentoItemsRef.current.filter(Boolean);
+  useEffect(() => {
+    // Clear the refs array
+    bentoItemsRef.current = bentoItemsRef.current.filter(Boolean);
 
-  // Initial states
-  gsap.set(bentoItemsRef.current, {
-    opacity: 0,
-    y: 40,
-    scale: 0.95
-  });
+    // Set initial state
+    gsap.set(bentoItemsRef.current, {
+      opacity: 0,
+      y: 40,
+      scale: 0.95
+    });
 
-  // Animate on scroll
-  const anim = gsap.to(bentoItemsRef.current, {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    duration: 1,
-    stagger: 0.1,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: bentoSection.current,
-      start: "top 85%",        // animation starts when section is 80% from top
-      end: "bottom 15%",
-      toggleActions: "play reverse play reverse",
-    }
-  });
+    // Create scroll-triggered animation
+    gsap.to(bentoItemsRef.current, {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 0.7,
+      stagger: 0.1, // Cards appear one after another
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".bento-grid",
+        start: "top 75%",
+        toggleActions: "play none none none",
+      }
+    });
 
-  return () => {
-    if (anim) anim.kill();
-    ScrollTrigger.getAll().forEach(t => t.kill());
-  };
-}, []);
+    // Cleanup
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
 
   return (
-    <section ref={bentoSection} className="travelers-section py-5 ">
+    <section className="travelers-section py-5">
       <div className="container">
         {/* Header */}
         <div className="text-center mb-5">
@@ -59,7 +57,7 @@ useEffect(() => {
         </div>
 
         {/* Bento Grid */}
-        <div  className="bento-grid section-body-gap">
+        <div className="bento-grid section-body-gap">
           <div className="row g-3 g-md-4">
             {/* Column 1 */}
             <div className="col-12 col-md-6 col-lg-3">
