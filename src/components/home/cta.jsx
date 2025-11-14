@@ -184,7 +184,7 @@ const CTA = () => {
                             You&apos;ve seen the destinations and read the reviews. Now it&apos;s your turn. Let our team handle all the details—from flights and visas to the perfect itinerary.
                         </p>
                         <div className="cta-btn" ref={buttonRef}>
-                            <Button text="Pack Your Bags" />
+                            <Button margin={false} text="Pack Your Bags" />
                         </div>
                     </div>
                 </div>

@@ -316,7 +316,7 @@ const DestinationSlider = () => {
         </div>
 
         {/* Custom Slider */}
-        <div className="destination-slider-wrapper">
+        <div className="destination-slider-wrapper section-body-gap">
           <div
             className="slider-track-container"
             onMouseEnter={handleSliderMouseEnter}

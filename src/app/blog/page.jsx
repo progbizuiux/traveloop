@@ -9,13 +9,13 @@ const Blog = () => {
         <div className="blog-page">
             <Banner description="Welcome to the Travel Loop blog. Get expert tips, in-depth destination guides, and the latest travel news to help you plan your next perfect adventure." title="Travel Inspiration & Expert Advice" />
 
-            <section className="featured-blog section-gap-top-bottom pt-0">
+            <section className="featured-blog section-gap-top-bottom ">
                 <div className="container">
 
                     <h3 className="fw-semibold">
                         Featured Post
                     </h3>
-                    <div className="row mobile-card-gap  section-body-gap">
+                    <div className="row mobile-card-gap  ">
 
                         <div className="col-lg-6 col-md-6 col-sm-12">
                             <BlogCard image={"/blog/blog-1.png"} description={"From the neon lights of Shinjuku to the serene temples of Kyoto, here's the perfect 10-day itinerary for your first trip to Japan."} title={"First-Timer's Guide to Japan: Tokyo, Kyoto & Osaka"} />

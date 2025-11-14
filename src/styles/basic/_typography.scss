@@ -26,8 +26,8 @@ $h4-md: 24px;
 $h5-md: 18px;
 
 $h1-sm: 40px;
-$h2-sm: 26px;
-$h3-sm: 24px;
+$h2-sm: 34px;
+$h3-sm: 26px;
 $h4-sm: 20px;
 $h5-sm: 18px;
 
@@ -96,6 +96,12 @@ h1,
     font-size: $h1-size;
     line-height: 91px;
     font-weight: 600;
+
+    @include breakpoint-less(sm) {
+letter-spacing: -3.08px;
+
+
+    }
 }
 
 h2,

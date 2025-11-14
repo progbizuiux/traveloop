@@ -9,7 +9,7 @@
 
 .slider-header-block {
   text-align: center;
-  margin-bottom: 60px;
+  // margin-bottom: 60px;
 
   .slider-main-title {
  
@@ -443,24 +443,24 @@
 }
 
 // Content animations (kept for text transitions)
-@keyframes slideContentIn {
-  from {
-    opacity: 0;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+// @keyframes slideContentIn {
+//   from {
+//     opacity: 0;
+//     transform: translateY(0);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
 
-@keyframes slideTextIn {
-  from {
-    opacity: 0;
-    transform: translateX(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+// @keyframes slideTextIn {
+//   from {
+//     opacity: 0;
+//     transform: translateX(25px);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateX(0);
+//   }
+// }

@@ -8,6 +8,7 @@ import Link from "next/link"
 
 // Navigation items configuration
 const NAV_ITEMS = [
+  { id: "home", label: "Home", href: "/" },
   { id: 'about', label: 'About', href: '/about' },
   { id: 'packages', label: 'Packages', href: '/packages' },
   { id: 'blog', label: 'Blog', href: '/blog' },
@@ -18,7 +19,7 @@ export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
-  
+
   // Check if we're on homepage
   const isHomePage = pathname === "/"
 
@@ -38,7 +39,7 @@ export const Navbar = () => {
     } else {
       document.body.classList.remove('mobile-menu-open')
     }
-    
+
     return () => {
       document.body.classList.remove('mobile-menu-open')
     }
@@ -72,9 +73,9 @@ export const Navbar = () => {
         'value': 1
       })
     }
-    
+
     closeMobileMenu()
-    
+
     setTimeout(() => {
       const contactSection = document.querySelector('#contact')
       if (contactSection) {
@@ -95,7 +96,7 @@ export const Navbar = () => {
     <header className={`nav-bar ${isScrolled ? "nav-bar--scrolled" : ""} ${!isHomePage ? "nav-bar--dark-links" : ""}`}>
       <div className="container">
         <div className="nav-bar__inner">
-          
+
           <div className="logo">
             <Link href="/">
               <Image
@@ -113,7 +114,7 @@ export const Navbar = () => {
             <ul>
               {NAV_ITEMS.map((item) => (
                 <li key={item.id}>
-                  <Link 
+                  <Link
                     href={item.href}
                     className={isActiveLink(item.href) ? "active" : ""}
                   >
@@ -126,18 +127,18 @@ export const Navbar = () => {
 
           {/* CTA Button */}
           {/* <Link href="/contact"> */}
-             <div className="cta">
-              <Button 
-                text="Contact" 
-                onClick={() => handleCTAClick('navbar_cta')}
-                margin={false}
-              />
-            </div>
+          <div className="cta">
+            <Button
+              text="Contact"
+              onClick={() => handleCTAClick('navbar_cta')}
+              margin={false}
+            />
+          </div>
           {/* </Link> */}
-         
+
 
           {/* Mobile Menu Toggle */}
-          <button 
+          <button
             className={`mobile-menu-toggle ${isMobileMenuOpen ? "active" : ""}`}
             onClick={toggleMobileMenu}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
@@ -154,19 +155,19 @@ export const Navbar = () => {
       {/* Mobile Menu Overlay */}
       <div className={`mobile-menu ${isMobileMenuOpen ? "mobile-menu--open" : ""}`}>
         {/* Backdrop - click to close */}
-        <div 
+        <div
           className="mobile-menu__backdrop"
           onClick={closeMobileMenu}
           aria-hidden="true"
         />
-        
+
         {/* Menu Content */}
         <div className="mobile-menu__content">
           <nav>
             <ul>
               {NAV_ITEMS.map((item) => (
                 <li key={item.id}>
-                  <Link 
+                  <Link
                     href={item.href}
                     onClick={closeMobileMenu}
                     className={isActiveLink(item.href) ? "active" : ""}
@@ -177,9 +178,9 @@ export const Navbar = () => {
               ))}
             </ul>
 
-            <div href="/contact"  className="mobile-menu__cta">
-              <Button 
-                text="Contact" 
+            <div href="/contact" className="mobile-menu__cta">
+              <Button
+                text="Contact"
                 onClick={() => handleCTAClick('mobile_navbar_cta')}
                 margin={false}
               />

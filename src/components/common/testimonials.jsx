@@ -104,29 +104,29 @@ export const TestimonialsCarousel = () => {
     <section className="testimonials-section container-fluid">
       <div className="testimonials-header">
         <h2 className="testimonials-title">Stories From Our Travelers</h2>
-        <div className="embla__buttons">
+        <div className="embla__buttons d-sm-block d-none">
           <button
-            className="embla__button"
+            className="embla__button "
             onClick={scrollPrev}
             disabled={prevBtnDisabled}
             aria-label="Previous testimonial"
           >
-         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-  <path
-    d="M8 14.9998H22"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  />
-  <path
-    d="M13.5 21.25C13.5 21.25 7.25003 16.647 7.25 15C7.24999 13.353 13.5 8.75 13.5 8.75"
-    stroke="currentColor"
-    strokeWidth="2"
-   strokeLinecap="round"
-    strokeLinejoin="round"
-  />
-</svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+              <path
+                d="M8 14.9998H22"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M13.5 21.25C13.5 21.25 7.25003 16.647 7.25 15C7.24999 13.353 13.5 8.75 13.5 8.75"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
 
           </button>
           <button
@@ -135,22 +135,22 @@ export const TestimonialsCarousel = () => {
             disabled={nextBtnDisabled}
             aria-label="Next testimonial"
           >
-          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-  <path
-    d="M22 15.0002L8 15.0002"
-    stroke="currentColor"
-    strokeWidth="1.5"
-   strokeLinecap="round"
-    strokeLinejoin="round"
-  />
-  <path
-    d="M16.5 8.75C16.5 8.75 22.75 13.353 22.75 15C22.75 16.647 16.5 21.25 16.5 21.25"
-    stroke="currentColor"
-    strokeWidth="1.5"
-   strokeLinecap="round"
-    strokeLinejoin="round"
-  />
-</svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+              <path
+                d="M22 15.0002L8 15.0002"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M16.5 8.75C16.5 8.75 22.75 13.353 22.75 15C22.75 16.647 16.5 21.25 16.5 21.25"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
 
           </button>
         </div>
@@ -196,6 +196,57 @@ export const TestimonialsCarousel = () => {
           </div>
         </div>
       </div>
+
+        <div className="embla__buttons d-flex w-100 justify-content-end d-block d-sm-none">
+          <button
+            className="embla__button "
+            onClick={scrollPrev}
+            disabled={prevBtnDisabled}
+            aria-label="Previous testimonial"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+              <path
+                d="M8 14.9998H22"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M13.5 21.25C13.5 21.25 7.25003 16.647 7.25 15C7.24999 13.353 13.5 8.75 13.5 8.75"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+
+          </button>
+          <button
+            className="embla__button"
+            onClick={scrollNext}
+            disabled={nextBtnDisabled}
+            aria-label="Next testimonial"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+              <path
+                d="M22 15.0002L8 15.0002"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M16.5 8.75C16.5 8.75 22.75 13.353 22.75 15C22.75 16.647 16.5 21.25 16.5 21.25"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+
+          </button>
+        </div>
 
       {/* <div className="testimonials-embla__dots">
         {testimonials.map((_, index) => (
