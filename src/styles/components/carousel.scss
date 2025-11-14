@@ -51,8 +51,8 @@
   border-radius: 16px;
   overflow: hidden;
   flex-shrink: 0;
-  transition: flex 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+transition: flex 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),  // Faster transition
+              transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); // Same curve for smoothness
   will-change: flex, transform;
 
   @media (max-width: 768px) {
@@ -87,7 +87,7 @@
     }
 
     .card-background-image {
-      transform: scale(1.05);
+      transform: scale(1.2);
     }
   }
 

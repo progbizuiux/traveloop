@@ -212,7 +212,7 @@
     -webkit-tap-highlight-color: transparent;
 
     span {
-      width: 26px;
+      // width: 26px;
       height: 2px;
       background: #ffffff;
       border-radius: 2px;
@@ -223,14 +223,19 @@
 
       &:nth-child(1) {
         top: 12px;
+        width: 15px;
+        // right: 10px;
       }
 
       &:nth-child(2) {
         top: 19px;
+        width: 26px;
       }
 
       &:nth-child(3) {
         top: 26px;
+        // right: 10px;
+        width: 15px;
       }
     }
 
@@ -241,15 +246,18 @@
         &:nth-child(1) {
           top: 19px;
           transform: translateX(-50%) rotate(45deg);
+          width: 26px;
         }
 
         &:nth-child(2) {
           opacity: 0;
           transform: translateX(-50%) scale(0);
+
         }
 
         &:nth-child(3) {
           top: 19px;
+          width: 26px;
           transform: translateX(-50%) rotate(-45deg);
         }
       }
