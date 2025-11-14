@@ -1,54 +1,17 @@
 "use client";
-import React, { useEffect, useRef } from 'react';
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useRef } from "react";
 import "@/styles/components/bento.scss";
-import Image from 'next/image';
-
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
+import Image from "next/image";
 
 const TravelersAdventuresCreative = () => {
-  const bentoItemsRef = useRef([]);
-
-  useEffect(() => {
-    // Clear the refs array
-    bentoItemsRef.current = bentoItemsRef.current.filter(Boolean);
-
-    // Set initial state
-    gsap.set(bentoItemsRef.current, {
-      opacity: 0,
-      y: 40,
-      scale: 0.95
-    });
-
-    // Create scroll-triggered animation
-    gsap.to(bentoItemsRef.current, {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      duration: 0.7,
-      stagger: 0.1, // Cards appear one after another
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: ".bento-grid",
-        start: "top 75%",
-        toggleActions: "play none none none",
-      }
-    });
-
-    // Cleanup
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
+  const sectionRef = useRef(null);
 
   return (
-    <section className="travelers-section py-5">
+    <section className="travelers-section py-5" ref={sectionRef}>
       <div className="container">
         {/* Header */}
         <div className="text-center mb-5">
-          <h2 className="section-title mb-3">See Our Travelers' Adventures</h2>
+          <h2 className="section-title mb-3">See Our Travelers&apos; Adventures</h2>
           <p className="section-subtitle">
             Get inspired by these real, unfiltered moments captured by the Travel Loop community on their journeys
             <br />
@@ -59,14 +22,14 @@ const TravelersAdventuresCreative = () => {
         {/* Bento Grid */}
         <div className="bento-grid section-body-gap">
           <div className="row g-3 g-md-4">
+
             {/* Column 1 */}
             <div className="col-12 col-md-6 col-lg-3">
               <div className="row g-3 g-md-4">
-                {/* Large tall image - Hiker */}
                 <div className="col-12">
-                  <div className="bento-item bento-tall" ref={el => bentoItemsRef.current[0] = el}>
+                  <div className="bento-item bento-tall">
                     <Image
-                      src="/bento/adventure-videos.png" 
+                      src="/bento/adventure-videos.png"
                       alt="Hiker on mountain trail"
                       className="bento-img"
                       width={500}
@@ -74,11 +37,11 @@ const TravelersAdventuresCreative = () => {
                     />
                   </div>
                 </div>
-                {/* Medium image - Beach traveler */}
+
                 <div className="col-12">
-                  <div className="bento-item bento-medium" ref={el => bentoItemsRef.current[1] = el}>
+                  <div className="bento-item bento-medium">
                     <Image
-                      src="/bento/three.png" 
+                      src="/bento/three.png"
                       alt="Traveler at tropical beach"
                       className="bento-img"
                       width={500}
@@ -92,11 +55,10 @@ const TravelersAdventuresCreative = () => {
             {/* Column 2 */}
             <div className="col-12 col-md-6 col-lg-3 mb-5">
               <div className="row g-3 g-md-4">
-                {/* Medium image - Temple */}
                 <div className="col-12">
-                  <div className="bento-item bento-medium" ref={el => bentoItemsRef.current[2] = el}>
-                    <Image 
-                      src="/bento/two.png" 
+                  <div className="bento-item bento-medium">
+                    <Image
+                      src="/bento/two.png"
                       alt="Ancient temple"
                       className="bento-img"
                       width={500}
@@ -104,11 +66,11 @@ const TravelersAdventuresCreative = () => {
                     />
                   </div>
                 </div>
-                {/* Large tall image - Safari */}
+
                 <div className="col-12">
-                  <div className="bento-item bento-tall" ref={el => bentoItemsRef.current[3] = el}>
-                    <Image 
-                      src="/bento/four.png" 
+                  <div className="bento-item bento-tall">
+                    <Image
+                      src="/bento/four.png"
                       alt="Safari adventure"
                       className="bento-img"
                       width={500}
@@ -122,11 +84,10 @@ const TravelersAdventuresCreative = () => {
             {/* Column 3 */}
             <div className="col-12 col-md-6 col-lg-3">
               <div className="row g-3 g-md-4">
-                {/* Extra large tall image - Mountain stairs */}
-                 <div className="col-12">
-                  <div className="bento-item bento-medium" ref={el => bentoItemsRef.current[4] = el}>
-                    <Image 
-                      src="/bento/five.png" 
+                <div className="col-12">
+                  <div className="bento-item bento-medium">
+                    <Image
+                      src="/bento/five.png"
                       alt="City skyline at sunset"
                       className="bento-img"
                       width={500}
@@ -134,10 +95,11 @@ const TravelersAdventuresCreative = () => {
                     />
                   </div>
                 </div>
+
                 <div className="col-12">
-                  <div className="bento-item bento-tall" ref={el => bentoItemsRef.current[5] = el}>
-                    <Image 
-                      src="/bento/six.png" 
+                  <div className="bento-item bento-tall">
+                    <Image
+                      src="/bento/six.png"
                       alt="Mountain hiking trail"
                       className="bento-img"
                       width={500}
@@ -145,32 +107,17 @@ const TravelersAdventuresCreative = () => {
                     />
                   </div>
                 </div>
-                {/* Medium image - City sunset */}
-               
               </div>
             </div>
 
             {/* Column 4 */}
             <div className="col-12 col-md-6 col-lg-3">
               <div className="row g-3 g-md-4">
-                {/* Medium image - Couple with map */}
-               
-                {/* Large tall image - City street */}
-                   <div className="col-12">
-                  <div className="bento-item bento-medium" ref={el => bentoItemsRef.current[6] = el}>
-                    <Image 
-                      src="/bento/seven.png" 
-                      alt="Couple exploring with map"
-                      className="bento-img"
-                      width={500}
-                      height={500}
-                    />
-                  </div>
-                </div>
+                
                 <div className="col-12">
-                  <div className="bento-item bento-tall" ref={el => bentoItemsRef.current[7] = el}>
-                    <Image 
-                      src="/bento/eight.png" 
+                  <div className="bento-item bento-tall">
+                    <Image
+                      src="/bento/eight.png"
                       alt="City street exploration"
                       className="bento-img"
                       width={500}
@@ -178,9 +125,21 @@ const TravelersAdventuresCreative = () => {
                     />
                   </div>
                 </div>
-              
+                <div className="col-12">
+                  <div className="bento-item bento-medium">
+                    <Image
+                      src="/bento/seven.png"
+                      alt="Couple exploring with map"
+                      className="bento-img"
+                      width={500}
+                      height={500}
+                    />
+                  </div>
+                </div>
+
               </div>
             </div>
+
           </div>
         </div>
       </div>
