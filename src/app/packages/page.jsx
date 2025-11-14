@@ -17,12 +17,12 @@ const Package = () => {
 
                 <div className="package_wrapper section-gap-top-bottom pt-0">
 
-                   <PackageCard 
-                             image="/package/package-0.png"
-                             price="1499"
-                             title="European Capitals Premium"
-                             description="A curated journey through the art of Paris, the ancient history of Rome, and the charming canals of Amsterdam."
-                           />
+                    <PackageCard
+            image="/package/pkg.png"
+            price="1499"
+            title="European Capitals Premium"
+            description="A curated journey through the art of Paris, the ancient history of Rome, and the charming canals of Amsterdam."
+          />
                            <PackageCard 
                              image="/package/wonders.png"
                              price="899"

@@ -40,7 +40,7 @@ const BannerSimple = ({title="Banner Title",description="Banner Description"}) =
 
             <div className='page-banner-content'>
 
-                <h1 className='fw-medium' ref={titleRef}>{title}</h1>
+                <h1 ref={titleRef}>{title}</h1>
 
                 <p ref={descriptionRef}>{description}</p>
 

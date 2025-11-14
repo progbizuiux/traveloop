@@ -8,6 +8,7 @@ import { Navbar } from "@/components/Navbar/Navbar";
 import NoSSRBootstrap from "@/lib/bootstrap";
 
 import localFont from "next/font/local";
+import ScrollToTop from "@/components/top-arrow";
 
 
 // const roobert = localFont({
@@ -76,6 +77,7 @@ export default function RootLayout({ children }) {
           {children}
           {/* </TransitionLayout> */}
         </LenisSmoothScroll>
+        <ScrollToTop/>
 
         {/* </Locomotive> */}
       </body>

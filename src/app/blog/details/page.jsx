@@ -161,14 +161,14 @@ const Page = () => {
                                 Evening: Head to Roppongi Hills for a more upscale vibe, great art at the Mori Art Museum, and arguably the best panoramic view of the city (including Tokyo Tower) from the "Tokyo City View" observation deck.
                             </p>
 
-                            <h5 ref={section4Ref}>
+                            {/* <h5 ref={section4Ref}>
                                 Part 3: Osaka (Days 7-10) - The Future
                             </h5>
-                            <p>Content for Osaka section...</p>
+                            <p>Content for Osaka section...</p> */}
                         </div>
                     </div>
 
-                    <div className="col-lg-4 col-md-4 col-sm-12">
+<div class="col-lg-4 col-md-4 col-sm-12 d-none d-sm-block">
                         <div className="blog_table_content">
 
                             <h6>

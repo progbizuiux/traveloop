@@ -16,36 +16,35 @@ const TravelersAdventuresCreative = () => {
 useEffect(() => {
   bentoItemsRef.current = bentoItemsRef.current.filter(Boolean);
 
-  // Delay animation to give images time to load
-  const timer = setTimeout(() => {
-    gsap.set(bentoItemsRef.current, {
-      opacity: 0,
-      y: 40,
-      scale: 0.95
-    });
+  // Initial states
+  gsap.set(bentoItemsRef.current, {
+    opacity: 0,
+    y: 40,
+    scale: 0.95
+  });
 
-    gsap.to(bentoItemsRef.current, {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      duration: 1,
-      stagger: 0.1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: bentoSection.current,
-        start: "top 5%",
-        end: "bottom 15%",
-        toggleActions: "play reverse play reverse",
-        // Alternative: toggleActions: "play none none reverse"
-      }
-    });
-  }, 500);
+  // Animate on scroll
+  const anim = gsap.to(bentoItemsRef.current, {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    duration: 1,
+    stagger: 0.1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: bentoSection.current,
+      start: "top 85%",        // animation starts when section is 80% from top
+      end: "bottom 15%",
+      toggleActions: "play reverse play reverse",
+    }
+  });
 
   return () => {
-    clearTimeout(timer);
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    if (anim) anim.kill();
+    ScrollTrigger.getAll().forEach(t => t.kill());
   };
 }, []);
+
   return (
     <section ref={bentoSection} className="travelers-section py-5 ">
       <div className="container">
